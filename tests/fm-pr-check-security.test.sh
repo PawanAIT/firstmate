@@ -193,7 +193,10 @@ case "${1:-} ${2:-}" in
   "pr checks")
     case " $* " in
       *" --required "*)
-        [ "${FM_TEST_GH_REQUIRED_UNAVAILABLE:-0}" = 0 ] || exit 1
+        if [ "${FM_TEST_GH_REQUIRED_UNAVAILABLE:-0}" != 0 ]; then
+          printf '%s' "${FM_TEST_GH_REQUIRED_ERROR-no required checks reported on the 'feature' branch}" >&2
+          exit 1
+        fi
         checks=${FM_TEST_GH_REQUIRED_CHECKS:-'[{"name":"ci","workflow":"CI","bucket":"pass"}]'}
         ;;
       *)
@@ -2986,7 +2989,7 @@ task_a_check_rows() {  # <state>
 # turns green. It deduplicates by recorded head and passing check set, merges
 # nothing, leaves the poll armed, and a later merge still wakes and retires it.
 test_checks_green_wakes_per_head_and_check_set() {
-  local dir state url armed
+  local dir state url armed marker error
   url=https://github.com/o/r/pull/7
   dir=$(make_case checks-green-once-per-head)
   state="$dir/home/state"
@@ -3011,6 +3014,19 @@ test_checks_green_wakes_per_head_and_check_set() {
   assert_no_grep 'pr merge' "$dir/gh.log" "the checks-green wake merged the pull request"
   [ ! -e "$state/task-a.merge-authority" ] || fail "the checks-green wake recorded merge authority"
   ack_watcher_cycle "$state" || fail "checks-green wake acknowledgement failed"
+
+  marker=$(fm_pr_sha256 "$state/task-a.pr-poll-green-notified")
+  for error in '' 'network timeout' 'HTTP 401: Bad credentials' 'API rate limit exceeded'; do
+    FM_TEST_GH_REQUIRED_UNAVAILABLE=1 FM_TEST_GH_REQUIRED_ERROR="$error" \
+      FM_TEST_GH_ALL_CHECKS='[{"name":"ci","workflow":"CI","bucket":"pass"},{"name":"lint","workflow":"CI","bucket":"pass"}]' \
+      run_green_cycle "$dir" required-error "$GREEN_HEAD_A" '{"state":"SUCCESS"}'
+    [ "$(task_a_check_rows "$state")" -eq 0 ] || fail "a required-check read error queued another wake: $error"
+    [ "$(fm_pr_sha256 "$state/task-a.pr-poll-green-notified")" = "$marker" ] \
+      || fail "a required-check read error changed the notified check set: $error"
+    assert_no_grep 'pr checks https://github.com/o/r/pull/7 --json' "$dir/gh.log" \
+      "a required-check read error fell back to all checks: $error"
+    ack_watcher_cycle "$state" || fail "required-check error control wake acknowledgement failed"
+  done
 
   run_green_cycle "$dir" green-a-again "$GREEN_HEAD_A" '{"state":"SUCCESS"}'
   case "$(cat "$dir/green-a-again.out")" in
@@ -3753,6 +3769,15 @@ test_green_poll_check_lists() {
   [ -z "$out" ] || fail "an unavailable fallback announced green"
   pass "required and fallback check lists require nonempty, entirely passing checks"
 }
+
+if [ "${1:-}" = --green ]; then
+  test_green_poll_missing_required
+  test_green_poll_check_lists
+  test_green_poll_contract
+  test_checks_green_wakes_per_head_and_check_set
+  test_checks_green_needs_a_yolo_direct_pr_recorded_head
+  exit 0
+fi
 
 test_green_poll_missing_required
 test_green_poll_check_lists

@@ -2,7 +2,7 @@
 # Static watcher probe for a yolo direct-PR task's recorded GitHub head.
 # Emits "checks-green <check-set-sha256>" only for an open PR at that head,
 # with a successful rollup AND a nonempty, entirely passing required-check
-# list. If requirements cannot be listed, every reported check must pass.
+# list. If gh reports no required checks, every reported check must pass.
 # The watcher deduplicates by head and check set, not head alone: a required
 # check can first report after GitHub has already called the rollup SUCCESS.
 # Errors and partial reads stay silent. This grants no merge authority;
@@ -34,12 +34,13 @@ read_head() {
 reading=$(read_head) || exit 0
 [ "$reading" = "OPEN $HEAD_SHA $HEAD_SHA SUCCESS" ] || exit 0
 
-if ! checks=$(gh pr checks "$FM_PR_URL" --required --json name,workflow,bucket 2>/dev/null); then
-  # gh also exits nonzero for pending/failed checks WITH a JSON list. Judge
-  # that list below; never bypass known nonpassing requirements via fallback.
-  if [ -z "$checks" ]; then
-    checks=$(gh pr checks "$FM_PR_URL" --json name,workflow,bucket 2>/dev/null) || exit 0
-  fi
+if ! checks=$(gh pr checks "$FM_PR_URL" --required --json name,workflow,bucket 2>&1); then
+  case "$checks" in
+    "no required checks reported on the '"*"' branch")
+      checks=$(gh pr checks "$FM_PR_URL" --json name,workflow,bucket 2>/dev/null) || exit 0
+      ;;
+    *) exit 0 ;;
+  esac
 fi
 check_set=$(printf '%s\n' "$checks" | jq -ce '
   select(type == "array" and length > 0)
