@@ -346,6 +346,46 @@ test_origin_head_refresh_window() {
   done
 }
 
+test_local_merge_refreshes_default_inside_spawn_window() {
+  local rec id out status base ship
+  id='pool-local-merge-default'
+  rec=$(make_case local-merge-default "$id")
+  read_case_record "$rec"
+  record_origin_head
+  base=$(git -C "$PROJECT_DIR" rev-parse origin/main)
+  git -C "$PROJECT_DIR" merge --ff-only origin/main >/dev/null
+  git -C "$CASE_DIR/publisher" push --quiet origin HEAD:refs/heads/trunk
+  git -C "$PROJECT_DIR" fetch --quiet origin
+  git -C "$PROJECT_DIR" branch trunk origin/trunk >/dev/null
+  git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/trunk
+
+  out=$(run_spawn "$id" --mode local-only --yolo off)
+  status=$?
+  expect_code 0 "$status" "local-only spawn should succeed"$'\n'"$out"
+  [ "$(git -C "$PROJECT_DIR" symbolic-ref refs/remotes/origin/HEAD)" = refs/remotes/origin/main ] \
+    || fail "fixture did not retain the cached default inside the spawn window"
+  git -C "$POOL_DIR" checkout --quiet -b "fm/$id"
+  printf 'ship change\n' > "$POOL_DIR/ship.txt"
+  git -C "$POOL_DIR" add ship.txt
+  git -C "$POOL_DIR" -c user.name='Firstmate Tests' -c user.email='tests@example.invalid' commit -qm ship
+  ship=$(git -C "$POOL_DIR" rev-parse HEAD)
+
+  out=$(FM_HOME="$HOME_DIR" FM_STATE_OVERRIDE="$HOME_DIR/state" "$ROOT/bin/fm-merge-local.sh" "$id" 2>&1)
+  status=$?
+  [ "$status" -ne 0 ] || fail "local merge advanced cached main after origin switched to trunk"
+  assert_contains "$out" "expected default branch 'trunk'" "merge did not resolve the new default"
+  [ "$(git -C "$PROJECT_DIR" rev-parse main)" = "$base" ] || fail "refused merge moved main"
+
+  git -C "$PROJECT_DIR" checkout --quiet trunk
+  git -C "$PROJECT_DIR" remote set-head origin main
+  out=$(FM_HOME="$HOME_DIR" FM_STATE_OVERRIDE="$HOME_DIR/state" "$ROOT/bin/fm-merge-local.sh" "$id" 2>&1)
+  status=$?
+  expect_code 0 "$status" "local merge should target trunk despite the cached main name"$'\n'"$out"
+  [ "$(git -C "$PROJECT_DIR" rev-parse trunk)" = "$ship" ] || fail "local merge did not advance trunk"
+  [ "$(git -C "$PROJECT_DIR" rev-parse main)" = "$base" ] || fail "local merge moved the old default"
+  pass "local merge refreshes the default independently of the spawn window"
+}
+
 test_refresh_marker_is_reused_by_another_pool_slot() {
   local rec id out status marker stamp
   id='pool-shared-marker-first'
@@ -957,6 +997,7 @@ test_stale_pool_base_refreshes_before_branching
 test_non_main_default_branch_refreshes_before_branching
 test_recorded_origin_head_refreshes_in_one_origin_contact
 test_origin_head_refresh_window
+test_local_merge_refreshes_default_inside_spawn_window
 test_refresh_marker_is_reused_by_another_pool_slot
 test_moved_origin_default_is_followed_past_a_recorded_origin_head
 test_direct_pr_and_scout_refresh_before_launch
