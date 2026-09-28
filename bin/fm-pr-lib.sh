@@ -19,6 +19,11 @@
 # The receipt binds the terminal observation to the canonical registration and
 # lets a restart finish fixed-path removal without executing state-file bytes.
 
+# --- GitHub base-branch required checks --------------------------------------
+# bin/fm-pr-merge.sh and bin/fm-pr-green-poll.sh share these helpers.
+# github_read_required_contexts and github_read_check_producers address the
+# caller's PR_OWNER and PR_REPO; callers must set both first.
+
 github_urlencode_path_segment() {
   local LC_ALL=C input=$1 encoded='' char octet hex
   while [ -n "$input" ]; do

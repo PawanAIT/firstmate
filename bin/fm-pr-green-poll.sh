@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Static watcher probe for a yolo direct-PR task's recorded GitHub head.
 # Emits "checks-green <check-set-sha256>" only for an open PR at that head,
-# with a successful rollup, all readable base requirements satisfied, and a
-# nonempty check list with only pass/skipping buckets (all checks on fallback).
+# with a successful rollup, a readable base-branch required set whose every
+# context passed at that head, and a nonempty check list with only pass/skipping
+# buckets (all checks on fallback).
 # The watcher deduplicates by head and check set, not head alone: a required
 # check can first report after GitHub has already called the rollup SUCCESS.
 # Errors and partial reads stay silent. This grants no merge authority;
