@@ -243,8 +243,8 @@
 #   set (its header owns the refusal). A secondmate runs in its own home and is
 #   not marked.
 #   Only after this isolation check, every fresh ship or scout requires a clean
-#   task worktree. When an origin configuration is detected, spawn resolves the
-#   current remote default branch and resets to its freshly fetched tip. When none
+#   task worktree. When an origin configuration is detected, spawn resets to the
+#   freshly fetched tip of origin's current default branch. When none
 #   is detected, spawn skips that remote freshness check and launches from the
 #   clean worktree's current HEAD. Relaunch reuses the recorded worktree without
 #   fetching or resetting its base. An unreachable detected origin, unresolved
@@ -252,10 +252,13 @@
 #   risking a PR based on stale history or discarding local work.
 #   That remote freshness check uses a single fetch only within
 #   FM_ORIGIN_HEAD_REFRESH_SECONDS of the clone's last successful origin/HEAD
-#   refresh (default 600 seconds; 0 disables this path), as recorded by its shared
-#   refresh marker. The fetch updates the branch origin/HEAD names and samples
-#   the commit origin's own HEAD resolves to, keeping that branch only when the
-#   two agree. With a missing, unreadable, invalid, future-dated, or expired
+#   refresh, as recorded by its shared refresh marker (window configuration:
+#   docs/configuration.md). The fetch updates the branch origin/HEAD names and
+#   samples the commit origin's own HEAD resolves to, keeping that branch only
+#   when the two agree. A same-commit default-branch switch can therefore leave
+#   origin/HEAD naming the old branch until a fresh spawn refreshes it after the
+#   window expires, or sooner if the tips differ. With a missing, unreadable,
+#   invalid, future-dated, or expired
 #   marker, a disabled window, no local origin/HEAD, a failed fetch, or differing
 #   commits, spawn fetches all of origin, re-resolves the default with
 #   `git remote set-head --auto`, and fetches the resolved branch instead.
