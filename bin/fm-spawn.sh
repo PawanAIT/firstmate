@@ -250,12 +250,15 @@
 #   fetching or resetting its base. An unreachable detected origin, unresolved
 #   default branch, or non-clean worktree refuses a fresh spawn rather than
 #   risking a PR based on stale history or discarding local work.
-#   That remote freshness check usually costs one fetch of only the branch
-#   origin/HEAD names, which also samples the commit origin's own HEAD resolves
-#   to, and keeps that branch only when the two agree. With no local origin/HEAD,
-#   or when that fetch fails or the commits differ because origin renamed or
-#   switched its default, spawn fetches all of origin and re-resolves the default
-#   with `git remote set-head --auto` instead.
+#   That remote freshness check uses a single fetch only within
+#   FM_ORIGIN_HEAD_REFRESH_SECONDS of the clone's last successful origin/HEAD
+#   refresh (default 600 seconds; 0 disables this path), as recorded by its shared
+#   refresh marker. The fetch updates the branch origin/HEAD names and samples
+#   the commit origin's own HEAD resolves to, keeping that branch only when the
+#   two agree. With a missing, unreadable, invalid, future-dated, or expired
+#   marker, a disabled window, no local origin/HEAD, a failed fetch, or differing
+#   commits, spawn fetches all of origin, re-resolves the default with
+#   `git remote set-head --auto`, and fetches the resolved branch instead.
 #   A slot whose only deviation is a stale submodule gitlink is refused by that
 #   same clean check, but is reported as a stale checkout naming each submodule
 #   and both pins; nothing is converged or removed, and no remedy is suggested.

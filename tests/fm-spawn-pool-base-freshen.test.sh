@@ -6,9 +6,12 @@
 # These tests drive the real spawn path with a fake terminal, then prove it
 # starts the worker from the fetched origin tip, launches a clean origin-less
 # pool as-is, or stops when a configured origin is unusable.
-# A recorded origin/HEAD lets that refresh cost one origin contact, so the
-# cases below also prove it still follows origin to a renamed or switched
-# default and still refuses an unusable origin while one is recorded.
+# A recorded origin/HEAD lets that refresh cost one origin contact only within
+# FM_ORIGIN_HEAD_REFRESH_SECONDS of the clone's last successful origin/HEAD
+# refresh. A missing or stale refresh marker requires the full refresh path.
+# The cases below also cover invalid markers and window settings, following a
+# renamed or switched default, and refusing an unusable origin while one is
+# recorded.
 set -u
 
 # shellcheck source=tests/fixtures.sh
