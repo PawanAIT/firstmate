@@ -15,6 +15,7 @@ set -u
 . "$(dirname "${BASH_SOURCE[0]}")/fixtures.sh"
 
 TMP_ROOT=$(fm_test_tmproot fm-spawn-pool-base-freshen)
+export FM_ORIGIN_HEAD_REFRESH_SECONDS=600
 
 make_case() {
   local name=$1 id=$2 default=${3:-main} case_dir home project origin pool publisher fakebin initial
@@ -63,10 +64,14 @@ run_spawn() {
 }
 
 # A clone records origin/HEAD, but these projects gain their origin by
-# `remote add`, so record it the same way a clone does.
+# `remote add`, so record it and seed the persisted refresh timestamp.
 record_origin_head() {
   git -C "$PROJECT_DIR" fetch --quiet origin
   git -C "$PROJECT_DIR" remote set-head origin --auto >/dev/null
+  local marker
+  marker=$(git -C "$PROJECT_DIR" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed)
+  mkdir -p "$(dirname "$marker")"
+  date +%s > "$marker"
 }
 
 # Commits <file> on the publisher's current branch, pushes that commit to
@@ -279,6 +284,94 @@ test_recorded_origin_head_refreshes_in_one_origin_contact() {
       "$contacts" "$(git -C "$POOL_DIR" rev-parse HEAD)" "$current"
   fi
   pass "a recorded origin/HEAD refreshes the pooled worktree with one origin contact and no other branch"
+}
+
+test_origin_head_refresh_window() {
+  local rec id out status state marker stamp before after contacts expected_contacts expected_branch window
+  for state in fresh missing expired future invalid unreadable disabled empty-window invalid-window custom-window; do
+    id="pool-head-window-$state"
+    rec=$(make_case "head-window-$state" "$id")
+    read_case_record "$rec"
+    record_origin_head
+    marker=$(git -C "$POOL_DIR" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed)
+    [ "$marker" = "$(git -C "$PROJECT_DIR" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed)" ] \
+      || fail "the pool and primary do not share the refresh marker"
+    stamp=$(($(date +%s) - 60))
+    printf '%s\n' "$stamp" > "$marker"
+    window=600
+    expected_contacts=3
+    expected_branch=trunk
+    case "$state" in
+      fresh) expected_contacts=1; expected_branch=main ;;
+      missing) rm "$marker" ;;
+      expired) printf '%s\n' "$(($(date +%s) - 3600))" > "$marker" ;;
+      future) printf '%s\n' "$(($(date +%s) + 3600))" > "$marker" ;;
+      invalid) printf 'not-a-time\n' > "$marker" ;;
+      unreadable) rm "$marker"; mkdir "$marker" ;;
+      disabled) window=0 ;;
+      empty-window) window=''; expected_contacts=1; expected_branch=main ;;
+      invalid-window) window=invalid; expected_contacts=1; expected_branch=main ;;
+      custom-window) window=30 ;;
+    esac
+    git -C "$CASE_DIR/publisher" push --quiet origin HEAD:refs/heads/trunk
+    git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/trunk
+    count_origin_contacts
+    before=$(date +%s)
+
+    out=$(FM_ORIGIN_HEAD_REFRESH_SECONDS="$window" run_spawn "$id" --mode no-mistakes --yolo off)
+    status=$?
+    after=$(date +%s)
+    expect_code 0 "$status" "spawn should respect the $state refresh marker/window"$'\n'"$out"
+    contacts=$(grep -c contact "$ORIGIN_CONTACTS")
+    [ "$contacts" -eq "$expected_contacts" ] \
+      || fail "$state marker/window contacted origin $contacts times, expected $expected_contacts"
+    [ "$(git -C "$POOL_DIR" symbolic-ref refs/remotes/origin/HEAD)" = "refs/remotes/origin/$expected_branch" ] \
+      || fail "$state marker/window left origin/HEAD on the wrong branch"
+    [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$(git -C "$CASE_DIR/publisher" rev-parse HEAD)" ] \
+      || fail "$state marker/window spawned from the wrong commit"
+    if [ "$state" = unreadable ]; then
+      [ -d "$marker" ] || fail "spawn replaced the unwritable marker"
+    elif [ "$expected_contacts" -eq 1 ]; then
+      [ "$(cat "$marker")" = "$stamp" ] || fail "fast-path spawn extended the refresh window"
+    else
+      stamp=$(cat "$marker")
+      [[ "$stamp" =~ ^[0-9]+$ ]] || fail "spawn did not persist an epoch refresh time"
+      [ "$stamp" -ge "$before" ] && [ "$stamp" -le "$after" ] \
+        || fail "spawn did not write a current refresh marker"
+    fi
+    pass "$state origin/HEAD marker/window selects the correct refresh path"
+  done
+}
+
+test_refresh_marker_is_reused_by_another_pool_slot() {
+  local rec id out status marker stamp
+  id=pool-shared-marker-first
+  rec=$(make_case shared-marker "$id")
+  read_case_record "$rec"
+  out=$(run_spawn "$id" --scout)
+  status=$?
+  expect_code 0 "$status" "first slot should refresh origin/HEAD"$'\n'"$out"
+  marker=$(git -C "$POOL_DIR" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed)
+  stamp=$(cat "$marker")
+  [[ "$stamp" =~ ^[0-9]+$ ]] || fail "first slot did not persist a refresh time"
+  POOL_DIR="$CASE_DIR/second-pool"
+  git -C "$PROJECT_DIR" worktree add --quiet --detach "$POOL_DIR" "$INITIAL_SHA"
+  git -C "$CASE_DIR/publisher" push --quiet origin HEAD:refs/heads/trunk
+  git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/trunk
+  count_origin_contacts
+  id=pool-shared-marker-second
+  fm_test_spawn_brief "$HOME_DIR" "$id"
+
+  out=$(run_spawn "$id" --scout)
+  status=$?
+  expect_code 0 "$status" "second slot should reuse the clone's refresh marker"$'\n'"$out"
+  [ "$(grep -c contact "$ORIGIN_CONTACTS")" -eq 1 ] || fail "second slot did not take the fast path"
+  [ "$(git -C "$POOL_DIR" symbolic-ref refs/remotes/origin/HEAD)" = refs/remotes/origin/main ] \
+    || fail "second slot unexpectedly refreshed origin/HEAD"
+  [ "$(cat "$marker")" = "$stamp" ] || fail "second slot extended the refresh window"
+  [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$(git -C "$CASE_DIR/publisher" rev-parse HEAD)" ] \
+    || fail "second slot did not refresh its base"
+  pass "a successful refresh shares its marker across pool slots"
 }
 
 test_moved_origin_default_is_followed_past_a_recorded_origin_head() {
@@ -527,12 +620,19 @@ test_dirty_pool_refuses_without_discarding_work() {
 }
 
 test_unresolved_remote_default_refuses_pool() {
-  local rec id out status before origin_head
-  for origin_head in unset recorded; do
+  local rec id out status before origin_head marker stamp age
+  for origin_head in unset recorded expired; do
     id="pool-unresolved-default-$origin_head-r5"
     rec=$(make_case "unresolved-default-$origin_head" "$id")
     read_case_record "$rec"
     [ "$origin_head" = unset ] || record_origin_head
+    marker=$(git -C "$POOL_DIR" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed)
+    if [ "$origin_head" != unset ]; then
+      age=60
+      [ "$origin_head" != expired ] || age=3600
+      printf '%s\n' "$(($(date +%s) - age))" > "$marker"
+    fi
+    stamp=$(cat "$marker" 2>/dev/null || true)
     git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/missing-default
     before=$(git -C "$POOL_DIR" rev-parse HEAD)
 
@@ -544,6 +644,11 @@ test_unresolved_remote_default_refuses_pool() {
       "spawn did not clearly refuse an unresolved remote default branch (origin/HEAD $origin_head)"
     [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$before" ] \
       || fail "spawn moved HEAD after failing to resolve the remote default branch (origin/HEAD $origin_head)"
+    if [ "$origin_head" = unset ]; then
+      [ ! -e "$marker" ] || fail "failed set-head created a refresh marker"
+    else
+      [ "$(cat "$marker")" = "$stamp" ] || fail "failed set-head updated the refresh marker"
+    fi
     if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
       printf '# observed unresolved-default refusal (origin/HEAD %s): %s\n' \
         "$origin_head" "$(printf '%s\n' "$out" | tail -n 1)"
@@ -848,6 +953,8 @@ test_linked_spawning_home_rejects_primary_before_refresh
 test_stale_pool_base_refreshes_before_branching
 test_non_main_default_branch_refreshes_before_branching
 test_recorded_origin_head_refreshes_in_one_origin_contact
+test_origin_head_refresh_window
+test_refresh_marker_is_reused_by_another_pool_slot
 test_moved_origin_default_is_followed_past_a_recorded_origin_head
 test_direct_pr_and_scout_refresh_before_launch
 test_dirty_pool_refuses_without_discarding_work

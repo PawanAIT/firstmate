@@ -3319,7 +3319,7 @@ spawn_worktree_has_origin_config() { # <worktree>
 # in the same round trip, stores the commit origin's own HEAD resolves to in a
 # per-worktree probe ref, and the two commits must be equal. If origin moved its
 # default to another branch at that very commit, origin/HEAD keeps the old name
-# until the branches diverge, but the base is the same commit either way. Fails,
+# only within the refresh window and while the tips remain equal. Fails,
 # leaving no probe behind, when origin/HEAD is unset or names no origin branch,
 # the fetch fails, or the commits differ.
 spawn_fetch_recorded_origin_default() { # <worktree>
@@ -3340,6 +3340,7 @@ spawn_fetch_recorded_origin_default() { # <worktree>
 
 freshen_spawn_worktree_base() { # <worktree>
   local worktree=$1 default target expected actual status
+  local refresh_seconds=${FM_ORIGIN_HEAD_REFRESH_SECONDS:-600} marker refreshed now
   status=$(git -C "$worktree" -c core.quotePath=false status --porcelain) || {
     echo "error: could not inspect pooled worktree '$worktree' before refreshing its base" >&2
     return 1
@@ -3355,9 +3356,16 @@ freshen_spawn_worktree_base() { # <worktree>
   if ! spawn_worktree_has_origin_config "$worktree"; then
     return 0
   fi
-  # The full fetch below exists for set-head --auto, which needs a tracking ref
-  # for whichever branch origin now names; a renamed default may have none yet.
-  if ! default=$(spawn_fetch_recorded_origin_default "$worktree"); then
+  [[ "$refresh_seconds" =~ ^[0-9]+$ ]] || refresh_seconds=600
+  marker=$(git -C "$worktree" rev-parse --path-format=absolute --git-path common/fm-origin-head-refreshed) || marker=''
+  refreshed=$(cat "$marker" 2>/dev/null) || refreshed=''
+  now=$(date +%s)
+  # origin/HEAD may keep the old default name only within the refresh window
+  # and while the tips agree; otherwise set-head --auto needs a full fetch.
+  if ! { [[ "$refreshed" =~ ^[0-9]+$ ]] &&
+    awk -v stamp="$refreshed" -v now="$now" -v window="$refresh_seconds" \
+      'BEGIN { exit !(window > 0 && stamp <= now && now - stamp < window) }' &&
+    default=$(spawn_fetch_recorded_origin_default "$worktree"); }; then
     if ! git -C "$worktree" fetch --quiet origin; then
       echo "error: could not fetch origin for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
       return 1
@@ -3365,6 +3373,9 @@ freshen_spawn_worktree_base() { # <worktree>
     if ! git -C "$worktree" remote set-head origin --auto >/dev/null 2>&1; then
       echo "error: could not resolve origin's current default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
       return 1
+    fi
+    if [ -n "$marker" ]; then
+      { mkdir -p "$(dirname "$marker")" && date +%s > "$marker"; } 2>/dev/null || true
     fi
     default=$(default_branch "$worktree") || {
       echo "error: could not determine origin's default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
