@@ -1,0 +1,13 @@
+{
+  "notice": "Supplemental integration evidence: real watcher and persisted wake outputs, but gh and backend responses are mocked. NOT live GitHub validation.",
+  "outputs": {
+    "green-a.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "green-a-again.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-absent.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-expected.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-passed.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "required-reordered.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "green-b.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "watch.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-green-tmp/fm-pr-check-security.QckSh1/checks-green-once-per-head/home/state/task-a.check.sh: merged\n"
+  }
+}

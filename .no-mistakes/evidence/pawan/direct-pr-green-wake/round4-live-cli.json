@@ -1,0 +1,105 @@
+{
+  "isolation": "Real installed gh and repository CLI; fresh workspace-only HOME and GH_CONFIG_DIR; no mocks, operator credentials, or remote mutations.",
+  "records": [
+    {
+      "label": "missing arguments",
+      "command": [
+        "bin/fm-pr-green-poll.sh"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "unsupported forge",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://gitlab.com/g/p/-/merge_requests/7",
+        "1111111111111111111111111111111111111111"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "noncanonical pull number",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/07",
+        "1111111111111111111111111111111111111111"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "short head",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/7",
+        "111111111111111111111111111111111111111"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "uppercase head",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/7",
+        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "multiline head",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/7",
+        "1111111111111111111111111111111111111111\nx"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "extra argument",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/7",
+        "1111111111111111111111111111111111111111",
+        "extra"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "real gh authentication prerequisite",
+      "command": [
+        "gh",
+        "api",
+        "graphql",
+        "-f",
+        "query=query { viewer { login } }"
+      ],
+      "exit_code": 4,
+      "stdout": "",
+      "stderr": "To get started with GitHub CLI, please run:  gh auth login\nAlternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token.\n"
+    },
+    {
+      "label": "unavailable forge stays silent",
+      "command": [
+        "bin/fm-pr-green-poll.sh",
+        "https://github.com/o/r/pull/7",
+        "1111111111111111111111111111111111111111"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

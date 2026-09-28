@@ -1,0 +1,15 @@
+{
+  "disclaimer": "Real Firstmate watcher outputs with mocked gh responses; not live GitHub evidence.",
+  "outputs": {
+    "green-a-again.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "green-a.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "green-b.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "required-absent.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-error.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-expected.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "required-passed.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/task-a.check.sh: checks-green\n",
+    "required-reordered.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/z-stop.check.sh: stop-cycle\n",
+    "watch.out": "check: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase-tmp/fm-pr-check-security.6TkPr8/checks-green-once-per-head/home/state/task-a.check.sh: merged\n"
+  },
+  "persisted_marker": "fm-pr-poll-green-notified-v2\ngithub\ngithub.com\no/r\n7\n2222222222222222222222222222222222222222\n51d655849fba2b818a8595df16996c57b43a5081eafb78bf721864c83716b9b8\n"
+}

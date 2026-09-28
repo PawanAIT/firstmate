@@ -1,0 +1,158 @@
+[
+  {
+    "label": "Noncanonical URL",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/07",
+      "1111111111111111111111111111111111111111"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "GitLab excluded",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://gitlab.com/g/p/-/merge_requests/7",
+      "1111111111111111111111111111111111111111"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Short head",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/7",
+      "111111111111111111111111111111111111111"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Multiline head",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/7",
+      "1111111111111111111111111111111111111111\nx"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Missing head",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/7"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Extra argument",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/7",
+      "1111111111111111111111111111111111111111",
+      "extra"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Real gh isolated GraphQL credential probe",
+    "command": [
+      "gh",
+      "api",
+      "graphql",
+      "-f",
+      "query=query { viewer { login } }"
+    ],
+    "exit": 4,
+    "stdout": "",
+    "stderr": "To get started with GitHub CLI, please run:  gh auth login\nAlternatively, populate the GH_TOKEN environment variable with a GitHub API authentication token.\n"
+  },
+  {
+    "label": "No false green on actual gh authentication failure",
+    "command": [
+      "bash",
+      "bin/fm-pr-green-poll.sh",
+      "https://github.com/o/r/pull/7",
+      "1111111111111111111111111111111111111111"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Create disposable marked lab",
+    "command": [
+      "bash",
+      "bin/fm-lab-home.sh",
+      "create",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab"
+    ],
+    "exit": 0,
+    "stdout": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab\n",
+    "stderr": ""
+  },
+  {
+    "label": "Confirm private socket has no sessions",
+    "command": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab/s",
+      "list-sessions"
+    ],
+    "exit": 1,
+    "stdout": "",
+    "stderr": "error connecting to /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab/s (No such file or directory)\n"
+  },
+  {
+    "label": "Seed private delivered head and check-set marker",
+    "command": [
+      "bash",
+      "-c",
+      ". bin/fm-pr-lib.sh; fm_pr_poll_green_mark_notified \"$FM_HOME/state\" task-a github github.com o/r 7 \"$1\" \"$2\"",
+      "_",
+      "1111111111111111111111111111111111111111",
+      "2222222222222222222222222222222222222222222222222222222222222222"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "Persisted marker before teardown",
+    "content": "fm-pr-poll-green-notified-v2\ngithub\ngithub.com\no/r\n7\n1111111111111111111111111111111111111111\n2222222222222222222222222222222222222222222222222222222222222222\n",
+    "mode": "0o600"
+  },
+  {
+    "label": "Teardown finished task using real CLI and private absent endpoint",
+    "command": [
+      "bash",
+      "bin/fm-teardown.sh",
+      "task-a"
+    ],
+    "exit": 0,
+    "stdout": "teardown task-a complete (window lab:fm-task-a, worktree /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab/missing-worktree)\nBacklog: task-a just finished (config/backlog-backend selects manual editing). Update /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab/data/backlog.md - move task-a to Done, keep Done to the 10 most recent, then re-scan Queued and dispatch only work whose blockers are gone and date is due.\n",
+    "stderr": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.test-phase/lab\n\u25cf\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n\u25cf  WATCHER DOWN - SUPERVISION IS OFF\n\u25cf  1 task(s) in flight, but no live watcher process holds this home lock (last beat: 1s ago).\n\u25cf  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.\n\u25cf  This is a supervision warning only; the guarded operation WILL still run.\n\u25cf  repair a missing or failed watcher cycle with the Pi tool fm_watch_arm_pi, or restart Pi with -e /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.pi/extensions/fm-primary-turnend-guard.ts -e /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFM0A9WC1KFH8ECBP61EYK/.pi/extensions/fm-primary-pi-watch.ts if the extensions are not loaded.\n\u25cf\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n"
+  },
+  {
+    "label": "State after teardown",
+    "green_marker_exists": false,
+    "task_metadata_exists": false
+  }
+]
