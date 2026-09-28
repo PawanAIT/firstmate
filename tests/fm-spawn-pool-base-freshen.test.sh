@@ -6,6 +6,9 @@
 # These tests drive the real spawn path with a fake terminal, then prove it
 # starts the worker from the fetched origin tip, launches a clean origin-less
 # pool as-is, or stops when a configured origin is unusable.
+# A recorded origin/HEAD lets that refresh cost one origin contact, so the
+# cases below also prove it still follows origin to a renamed or switched
+# default and still refuses an unusable origin while one is recorded.
 set -u
 
 # shellcheck source=tests/fixtures.sh
@@ -57,6 +60,40 @@ run_spawn() {
   shift
   fm_test_run_spawn "$HOME_DIR" "$POOL_DIR" "$FAKEBIN_DIR" \
     "$id" "$PROJECT_DIR" "$@"
+}
+
+# A clone records origin/HEAD, but these projects gain their origin by
+# `remote add`, so record it the same way a clone does.
+record_origin_head() {
+  git -C "$PROJECT_DIR" fetch --quiet origin
+  git -C "$PROJECT_DIR" remote set-head origin --auto >/dev/null
+}
+
+# Commits <file> on the publisher's current branch, pushes that commit to
+# origin as <branch>, and prints it.
+publish_to_origin() { # <branch> <file>
+  local publisher="$CASE_DIR/publisher"
+  printf '%s\n' "$2" > "$publisher/$2"
+  git -C "$publisher" add "$2"
+  git -C "$publisher" -c user.name='Firstmate Tests' -c user.email='tests@example.invalid' commit -qm "$2"
+  git -C "$publisher" push --quiet origin "HEAD:refs/heads/$1"
+  git -C "$publisher" rev-parse HEAD
+}
+
+# Logs one line to ORIGIN_CONTACTS for every connection the project opens to
+# its origin: the remote's upload-pack side runs once per fetch, ls-remote, or
+# set-head --auto.
+count_origin_contacts() {
+  local wrapper="$CASE_DIR/counting-upload-pack"
+  ORIGIN_CONTACTS="$CASE_DIR/origin-contacts.log"
+  : > "$ORIGIN_CONTACTS"
+  cat > "$wrapper" <<SH
+#!/usr/bin/env bash
+printf 'contact\n' >> '$ORIGIN_CONTACTS'
+exec git upload-pack "\$@"
+SH
+  chmod +x "$wrapper"
+  git -C "$PROJECT_DIR" config remote.origin.uploadpack "$wrapper"
 }
 
 test_remote_seeded_home_spawns_from_treehouse_pool() {
@@ -215,6 +252,58 @@ test_non_main_default_branch_refreshes_before_branching() {
   pass "a stale pooled worktree resolves and refreshes a non-main default branch"
 }
 
+test_recorded_origin_head_refreshes_in_one_origin_contact() {
+  local rec id out status current refs_before contacts
+  id='pool-recorded-head-r14'
+  rec=$(make_case recorded-head "$id")
+  read_case_record "$rec"
+  record_origin_head
+  current=$(publish_to_origin main published-after-the-pool-fetched.txt)
+  git -C "$CASE_DIR/publisher" checkout --quiet -b side
+  publish_to_origin side side-branch-work.txt >/dev/null
+  refs_before=$(git -C "$POOL_DIR" for-each-ref --format='%(refname)')
+  count_origin_contacts
+
+  out=$(run_spawn "$id" --mode no-mistakes --yolo off)
+  status=$?
+  expect_code 0 "$status" "spawn should refresh a pooled worktree whose origin/HEAD is recorded"$'\n'"$out"
+  [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$current" ] \
+    || fail "spawn did not reset the pooled worktree to origin's current default-branch tip"
+  contacts=$(grep -c contact "$ORIGIN_CONTACTS")
+  [ "$contacts" -eq 1 ] \
+    || fail "spawn contacted origin $contacts times to refresh a recorded default branch, expected once"
+  [ "$(git -C "$POOL_DIR" for-each-ref --format='%(refname)')" = "$refs_before" ] \
+    || fail "spawn fetched a branch it does not reset to, or left a ref behind:"$'\n'"$(git -C "$POOL_DIR" for-each-ref --format='%(refname)')"
+  if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
+    printf '# observed recorded-origin/HEAD refresh: origin contacts=%s HEAD=%s origin/main=%s\n' \
+      "$contacts" "$(git -C "$POOL_DIR" rev-parse HEAD)" "$current"
+  fi
+  pass "a recorded origin/HEAD refreshes the pooled worktree with one origin contact and no other branch"
+}
+
+test_moved_origin_default_is_followed_past_a_recorded_origin_head() {
+  local rec id out status move current
+  for move in switched renamed; do
+    id="pool-moved-default-$move-r15"
+    rec=$(make_case "moved-default-$move" "$id")
+    read_case_record "$rec"
+    record_origin_head
+    git -C "$CASE_DIR/publisher" checkout --quiet -b trunk
+    current=$(publish_to_origin trunk only-on-the-new-default.txt)
+    git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/trunk
+    [ "$move" = switched ] || git --git-dir="$CASE_DIR/origin.git" update-ref -d refs/heads/main
+
+    out=$(run_spawn "$id" --mode no-mistakes --yolo off)
+    status=$?
+    expect_code 0 "$status" "spawn should follow origin's $move default branch"$'\n'"$out"
+    [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$current" ] \
+      || fail "spawn reset to the default origin/HEAD recorded instead of origin's $move one"
+    [ "$(git -C "$POOL_DIR" symbolic-ref refs/remotes/origin/HEAD)" = refs/remotes/origin/trunk ] \
+      || fail "spawn left origin/HEAD naming the old default after origin's default was $move"
+  done
+  pass "a spawn follows origin's switched or renamed default branch past a stale recorded origin/HEAD"
+}
+
 make_originless_case() {  # <name> <id>
   local name=$1 id=$2 case_dir home project pool fakebin initial
   case_dir="$TMP_ROOT/$name"
@@ -364,24 +453,29 @@ test_inactive_conditional_origin_include_launches_pool() {
 }
 
 test_unreachable_origin_refuses_stale_pool_base() {
-  local rec id out status before after
-  id='pool-unreachable-origin-r2'
-  rec=$(make_case unreachable-origin "$id")
-  read_case_record "$rec"
-  git -C "$POOL_DIR" remote set-url origin "file://$CASE_DIR/missing-origin.git"
-  before=$(git -C "$POOL_DIR" rev-parse HEAD)
+  local rec id out status before after origin_head
+  for origin_head in unset recorded; do
+    id="pool-unreachable-origin-$origin_head-r2"
+    rec=$(make_case "unreachable-origin-$origin_head" "$id")
+    read_case_record "$rec"
+    [ "$origin_head" = unset ] || record_origin_head
+    git -C "$POOL_DIR" remote set-url origin "file://$CASE_DIR/missing-origin.git"
+    before=$(git -C "$POOL_DIR" rev-parse HEAD)
 
-  out=$(run_spawn "$id" --mode no-mistakes --yolo off)
-  status=$?
-  [ "$status" -ne 0 ] || fail "spawn succeeded despite an unreachable origin"
-  assert_contains "$out" "could not fetch origin" \
-    "spawn did not clearly refuse an unreachable origin"
-  after=$(git -C "$POOL_DIR" rev-parse HEAD)
-  [ "$after" = "$before" ] || fail "spawn changed the pooled worktree after origin became unreachable"
-  if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
-    printf '# observed unreachable-origin refusal: %s\n' "$(printf '%s\n' "$out" | tail -n 1)"
-  fi
-  pass "an unreachable origin refuses a potentially stale pooled worktree"
+    out=$(run_spawn "$id" --mode no-mistakes --yolo off)
+    status=$?
+    [ "$status" -ne 0 ] || fail "spawn succeeded despite an unreachable origin (origin/HEAD $origin_head)"
+    assert_contains "$out" "could not fetch origin" \
+      "spawn did not clearly refuse an unreachable origin (origin/HEAD $origin_head)"
+    after=$(git -C "$POOL_DIR" rev-parse HEAD)
+    [ "$after" = "$before" ] \
+      || fail "spawn changed the pooled worktree after origin became unreachable (origin/HEAD $origin_head)"
+    if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
+      printf '# observed unreachable-origin refusal (origin/HEAD %s): %s\n' \
+        "$origin_head" "$(printf '%s\n' "$out" | tail -n 1)"
+    fi
+  done
+  pass "an unreachable origin refuses a potentially stale pooled worktree, whether or not origin/HEAD is recorded"
 }
 
 test_direct_pr_and_scout_refresh_before_launch() {
@@ -433,24 +527,29 @@ test_dirty_pool_refuses_without_discarding_work() {
 }
 
 test_unresolved_remote_default_refuses_pool() {
-  local rec id out status before
-  id='pool-unresolved-default-r5'
-  rec=$(make_case unresolved-default "$id")
-  read_case_record "$rec"
-  git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/missing-default
-  before=$(git -C "$POOL_DIR" rev-parse HEAD)
+  local rec id out status before origin_head
+  for origin_head in unset recorded; do
+    id="pool-unresolved-default-$origin_head-r5"
+    rec=$(make_case "unresolved-default-$origin_head" "$id")
+    read_case_record "$rec"
+    [ "$origin_head" = unset ] || record_origin_head
+    git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/missing-default
+    before=$(git -C "$POOL_DIR" rev-parse HEAD)
 
-  out=$(run_spawn "$id" --mode no-mistakes --yolo off)
-  status=$?
-  [ "$status" -ne 0 ] || fail "spawn succeeded despite an unresolved remote default branch"
-  assert_contains "$out" "could not resolve origin's current default branch" \
-    "spawn did not clearly refuse an unresolved remote default branch"
-  [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$before" ] \
-    || fail "spawn moved HEAD after failing to resolve the remote default branch"
-  if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
-    printf '# observed unresolved-default refusal: %s\n' "$(printf '%s\n' "$out" | tail -n 1)"
-  fi
-  pass "an unresolved remote default branch refuses the pooled worktree"
+    out=$(run_spawn "$id" --mode no-mistakes --yolo off)
+    status=$?
+    [ "$status" -ne 0 ] \
+      || fail "spawn succeeded despite an unresolved remote default branch (origin/HEAD $origin_head)"
+    assert_contains "$out" "could not resolve origin's current default branch" \
+      "spawn did not clearly refuse an unresolved remote default branch (origin/HEAD $origin_head)"
+    [ "$(git -C "$POOL_DIR" rev-parse HEAD)" = "$before" ] \
+      || fail "spawn moved HEAD after failing to resolve the remote default branch (origin/HEAD $origin_head)"
+    if [ "${FM_TEST_EVIDENCE:-0}" = 1 ]; then
+      printf '# observed unresolved-default refusal (origin/HEAD %s): %s\n' \
+        "$origin_head" "$(printf '%s\n' "$out" | tail -n 1)"
+    fi
+  done
+  pass "an unresolved remote default branch refuses the pooled worktree, whether or not origin/HEAD is recorded"
 }
 
 # A slot left on a stale submodule pin is the field failure this diagnosis exists
@@ -748,6 +847,8 @@ test_pool_slot_claim_follows_the_spawn_outcome
 test_linked_spawning_home_rejects_primary_before_refresh
 test_stale_pool_base_refreshes_before_branching
 test_non_main_default_branch_refreshes_before_branching
+test_recorded_origin_head_refreshes_in_one_origin_contact
+test_moved_origin_default_is_followed_past_a_recorded_origin_head
 test_direct_pr_and_scout_refresh_before_launch
 test_dirty_pool_refuses_without_discarding_work
 test_unresolved_remote_default_refuses_pool

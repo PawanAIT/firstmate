@@ -243,13 +243,19 @@
 #   set (its header owns the refusal). A secondmate runs in its own home and is
 #   not marked.
 #   Only after this isolation check, every fresh ship or scout requires a clean
-#   task worktree. When an origin configuration is detected, spawn fetches it,
-#   resolves the current remote default branch, and resets to its tip. When none
+#   task worktree. When an origin configuration is detected, spawn resolves the
+#   current remote default branch and resets to its freshly fetched tip. When none
 #   is detected, spawn skips that remote freshness check and launches from the
 #   clean worktree's current HEAD. Relaunch reuses the recorded worktree without
 #   fetching or resetting its base. An unreachable detected origin, unresolved
 #   default branch, or non-clean worktree refuses a fresh spawn rather than
 #   risking a PR based on stale history or discarding local work.
+#   That remote freshness check usually costs one fetch of only the branch
+#   origin/HEAD names, which also samples the commit origin's own HEAD resolves
+#   to, and keeps that branch only when the two agree. With no local origin/HEAD,
+#   or when that fetch fails or the commits differ because origin renamed or
+#   switched its default, spawn fetches all of origin and re-resolves the default
+#   with `git remote set-head --auto` instead.
 #   A slot whose only deviation is a stale submodule gitlink is refused by that
 #   same clean check, but is reported as a stale checkout naming each submodule
 #   and both pins; nothing is converged or removed, and no remedy is suggested.
@@ -3308,6 +3314,30 @@ spawn_worktree_has_origin_config() { # <worktree>
   return 1
 }
 
+# Prints the branch origin/HEAD names when one fetch proves that branch's fresh
+# tip is origin's current default-branch tip: the fetch refreshes the branch and,
+# in the same round trip, stores the commit origin's own HEAD resolves to in a
+# per-worktree probe ref, and the two commits must be equal. If origin moved its
+# default to another branch at that very commit, origin/HEAD keeps the old name
+# until the branches diverge, but the base is the same commit either way. Fails,
+# leaving no probe behind, when origin/HEAD is unset or names no origin branch,
+# the fetch fails, or the commits differ.
+spawn_fetch_recorded_origin_default() { # <worktree>
+  local worktree=$1 tracking branch tip='' head_tip='' probe=refs/worktree/fm-spawn-origin-head
+  tracking=$(git -C "$worktree" symbolic-ref --quiet refs/remotes/origin/HEAD 2>/dev/null) || return 1
+  case $tracking in
+    refs/remotes/origin/?*) branch=${tracking#refs/remotes/origin/} ;;
+    *) return 1 ;;
+  esac
+  if git -C "$worktree" fetch --quiet origin "+refs/heads/$branch:$tracking" "+HEAD:$probe" 2>/dev/null; then
+    tip=$(git -C "$worktree" rev-parse --verify --quiet "$tracking^{commit}" 2>/dev/null) || tip=''
+    head_tip=$(git -C "$worktree" rev-parse --verify --quiet "$probe^{commit}" 2>/dev/null) || head_tip=''
+  fi
+  git -C "$worktree" update-ref -d "$probe" >/dev/null 2>&1 || true
+  [ -n "$tip" ] && [ "$tip" = "$head_tip" ] || return 1
+  printf '%s\n' "$branch"
+}
+
 freshen_spawn_worktree_base() { # <worktree>
   local worktree=$1 default target expected actual status
   status=$(git -C "$worktree" -c core.quotePath=false status --porcelain) || {
@@ -3325,23 +3355,27 @@ freshen_spawn_worktree_base() { # <worktree>
   if ! spawn_worktree_has_origin_config "$worktree"; then
     return 0
   fi
-  if ! git -C "$worktree" fetch --quiet origin; then
-    echo "error: could not fetch origin for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
-    return 1
+  # The full fetch below exists for set-head --auto, which needs a tracking ref
+  # for whichever branch origin now names; a renamed default may have none yet.
+  if ! default=$(spawn_fetch_recorded_origin_default "$worktree"); then
+    if ! git -C "$worktree" fetch --quiet origin; then
+      echo "error: could not fetch origin for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
+      return 1
+    fi
+    if ! git -C "$worktree" remote set-head origin --auto >/dev/null 2>&1; then
+      echo "error: could not resolve origin's current default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
+      return 1
+    fi
+    default=$(default_branch "$worktree") || {
+      echo "error: could not determine origin's default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
+      return 1
+    }
+    if ! git -C "$worktree" fetch --quiet origin "+refs/heads/$default:refs/remotes/origin/$default"; then
+      echo "error: could not fetch 'origin/$default' for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
+      return 1
+    fi
   fi
-  if ! git -C "$worktree" remote set-head origin --auto >/dev/null 2>&1; then
-    echo "error: could not resolve origin's current default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
-    return 1
-  fi
-  default=$(default_branch "$worktree") || {
-    echo "error: could not determine origin's default branch for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
-    return 1
-  }
   target="origin/$default"
-  if ! git -C "$worktree" fetch --quiet origin "+refs/heads/$default:refs/remotes/origin/$default"; then
-    echo "error: could not fetch '$target' for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
-    return 1
-  fi
   expected=$(git -C "$worktree" rev-parse --verify --quiet "$target^{commit}" 2>/dev/null) || {
     echo "error: '$target' is not a commit for pooled worktree '$worktree'; refusing to launch from a potentially stale base" >&2
     return 1
