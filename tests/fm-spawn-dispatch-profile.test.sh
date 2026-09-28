@@ -836,6 +836,23 @@ hang) sleep 30; exit 0 ;;
 esac
 [ "$*" = 'models github-copilot --verbose --pure' ] && [ "$PWD" = / ] || exit 64
 cat <<'LISTING'
+github-copilot/no-variants-absent
+{
+  "id": "no-variants-absent",
+  "providerID": "github-copilot"
+}
+github-copilot/no-variants-null
+{
+  "id": "no-variants-null",
+  "providerID": "github-copilot",
+  "variants": null
+}
+github-copilot/no-variants-empty
+{
+  "id": "no-variants-empty",
+  "providerID": "github-copilot",
+  "variants": {}
+}
 github-copilot/claude-haiku-4.5
 {
   "id": "claude-haiku-4.5",
@@ -922,6 +939,31 @@ test_opencode_omits_copilot_variant_the_model_lacks() {
     "notice: OpenCode lists no 'low' variant for 'github-copilot/claude-haiku-4.5' (its variants: max high); effort=low is recorded but omitted from the launch" \
     "the omitted copilot effort must be noticed with the model's own variants"
   pass "opencode omits and notices a copilot effort the model's variants lack"
+}
+
+test_opencode_notices_copilot_model_without_variants() {
+  local shape rec id model out status launch
+  for shape in absent null empty; do
+    id=profile-opencode-no-variants-$shape
+    model=github-copilot/no-variants-$shape
+    rec=$(make_spawn_case "$id" opencode "$id")
+    read_case_record "$rec"
+    make_opencode_catalog_stub "$FAKEBIN_DIR"
+
+    out=$(run_ship_spawn "$HOME_DIR" "$WT_DIR" "$FAKEBIN_DIR" "$LAUNCH_LOG" "$id" "$PROJ_DIR" --model "$model" --effort high)
+    status=$?
+    expect_code 0 "$status" "opencode spawn with $shape variants should succeed"$'\n'"$out"
+    assert_meta_profile "$HOME_DIR/state/$id.meta" opencode "$model" high
+    launch=$(cat "$LAUNCH_LOG")
+    assert_contains "$launch" \
+      "OPENCODE_CONFIG_CONTENT='{\"permission\":{\"*\":\"allow\"}}' opencode --model '$model' --prompt" \
+      "opencode must omit the variant for $shape variants"
+    assert_contains "$out" \
+      "notice: OpenCode lists no 'high' variant for '$model' (its variants: none listed); effort=high is recorded but omitted from the launch" \
+      "$shape variants must be reported as none listed"
+    assert_not_contains "$out" "could not read the variants" "$shape variants are not a catalog read failure"
+  done
+  pass "opencode reports absent, null, and empty variants as none listed"
 }
 
 test_opencode_omits_copilot_variant_when_catalog_lookup_fails() {
@@ -2050,6 +2092,7 @@ test_opencode_emits_variant_for_openai_family_effort
 test_opencode_omits_variant_when_model_family_lacks_effort
 test_opencode_emits_copilot_variant_the_model_lists
 test_opencode_omits_copilot_variant_the_model_lacks
+test_opencode_notices_copilot_model_without_variants
 test_opencode_omits_copilot_variant_when_catalog_lookup_fails
 test_opencode_skips_catalog_lookup_without_copilot_effort
 test_opencode_copilot_lookup_leaves_nothing_behind_on_abort

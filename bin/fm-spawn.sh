@@ -1966,7 +1966,7 @@ opencode_listed_variant() {  # <provider/model> <effort>
   if [ "$rc" -eq 0 ] && variants=$(printf '%s\n' "$listing" | grep -v '^[^[:space:]{}]' |
     jq -rs --arg provider "$provider" --arg id "${model#*/}" '
       map(select(.providerID == $provider and .id == $id))
-      | if length == 1 then .[0].variants | keys_unsorted | join(" ")
+      | if length == 1 then (.[0].variants // {}) | keys_unsorted | join(" ")
         else error("no single record for the model") end' 2>/dev/null); then
     case " $variants " in
     *" $effort "*) printf '%s' "$effort" ;;
