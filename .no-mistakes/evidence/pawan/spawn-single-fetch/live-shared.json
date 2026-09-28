@@ -1,0 +1,36 @@
+{
+  "first_slot": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+  "second_slot": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/2/project",
+  "first_marker": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project/.git/common/fm-origin-head-refreshed",
+  "second_marker": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project/.git/common/fm-origin-head-refreshed",
+  "marker_before": "1790626167",
+  "marker_after": "1790626167",
+  "origin_head": "refs/remotes/origin/trunk",
+  "head": "55627be58f923bc1e8da95d25b6059b1d9534918",
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project",
+      "ppid": 1749150
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/2/project",
+      "ppid": 1749746
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-shared",
+    "endpoint_task_id": "live-shared",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/2/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project",
+    "harness": "opencode",
+    "kind": "ship",
+    "mode": "direct-PR",
+    "yolo": "off",
+    "branch": "fm/live-shared",
+    "tasktmp": "/tmp/fm-live-shared",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626368.1749852.24950",
+    "spawn_gen": "s1790626368.1748853.5127"
+  }
+}

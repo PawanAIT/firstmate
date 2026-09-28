@@ -1,0 +1,45 @@
+{
+  "scenario": "unwritable",
+  "exit": 0,
+  "initial": "c12e9977a57392828c1c02a166d3190e192a5d9d",
+  "expected": "d9ac5b902841a42e393620b4b787a12646d592a7",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+  "head": "d9ac5b902841a42e393620b4b787a12646d592a7",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "directory",
+  "marker_after": "directory",
+  "before": 1790626183,
+  "after": 1790626188,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unwritable/project",
+      "ppid": 1680064
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680778
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680783
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680792
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-unwritable",
+    "endpoint_task_id": "live-unwritable",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unwritable/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-unwritable",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626186.1680816.16772",
+    "spawn_gen": "s1790626186.1679598.15915"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}

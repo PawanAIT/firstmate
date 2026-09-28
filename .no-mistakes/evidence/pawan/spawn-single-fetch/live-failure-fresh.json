@@ -1,0 +1,33 @@
+{
+  "scenario": "failure-fresh",
+  "exit": 1,
+  "initial": "04a4c5d6a9b27b28433ac92314f97fdf4e4eed45",
+  "expected": "48231a02de675e88c91009f8a3cd201fa6eee507",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+  "head": "48231a02de675e88c91009f8a3cd201fa6eee507",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626167",
+  "marker_after": "1790626167",
+  "before": 1790626227,
+  "after": 1790626230,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-fresh/project",
+      "ppid": 1707954
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708793
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708809
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708836
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}

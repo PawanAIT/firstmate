@@ -1,0 +1,21 @@
+{
+  "scenario": "unreachable",
+  "exit": 1,
+  "initial": "e688a167f88a1d6c74ab8a4b02a13800c17cf9f2",
+  "expected": "f930662120ac80660fa61adbe54051009512144d",
+  "worktree": null,
+  "head": null,
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626170",
+  "marker_after": "1790626170",
+  "before": 1790626230,
+  "after": 1790626291,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable/project",
+      "ppid": 1709248
+    }
+  ],
+  "metadata": {},
+  "refs": ""
+}

@@ -1,0 +1,37 @@
+{
+  "scenario": "late-advance",
+  "exit": 0,
+  "initial": "8dcd8bc5b6ad61de3ea95278a9b09d241d7e6cff",
+  "expected": "a8d71ff08f8f66cbc87e4174818cd962ee30ceea",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+  "head": "a8d71ff08f8f66cbc87e4174818cd962ee30ceea",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626270",
+  "marker_after": "1790626270",
+  "before": 1790626330,
+  "after": 1790626336,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/late-advance/project",
+      "ppid": 1736580
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+      "ppid": 1737231
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-late-advance",
+    "endpoint_task_id": "live-late-advance",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/late-advance/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-late-advance",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626333.1737307.25221",
+    "spawn_gen": "s1790626333.1736341.32541"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}

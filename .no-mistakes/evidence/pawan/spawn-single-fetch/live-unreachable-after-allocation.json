@@ -1,0 +1,29 @@
+{
+  "scenario": "unreachable-after-allocation",
+  "exit": 1,
+  "initial": "a153fa31dfacf61f985013641499a65196a2baac",
+  "expected": "bb3d2847d93acf91fe66479aad59389ff681eca4",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+  "head": "bb3d2847d93acf91fe66479aad59389ff681eca4",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626276",
+  "marker_after": "1790626276",
+  "before": 1790626336,
+  "after": 1790626339,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable-after-allocation/project",
+      "ppid": 1740812
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+      "ppid": 1741495
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+      "ppid": 1741520
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}

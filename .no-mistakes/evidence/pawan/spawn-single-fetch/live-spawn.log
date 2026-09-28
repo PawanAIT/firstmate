@@ -1,0 +1,861 @@
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-advanced /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/advanced/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-advanced harness=opencode kind=scout window=primary:fm-live-advanced worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-0ef155/1/project
+
+{
+  "scenario": "advanced",
+  "exit": 0,
+  "initial": "bdcb9516a7f5e25beb8e7a4c1ec6ba900e537b70",
+  "expected": "69015209ab8804608f287172252cd7e7b702c0c9",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-0ef155/1/project",
+  "head": "69015209ab8804608f287172252cd7e7b702c0c9",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626085",
+  "marker_after": "1790626085",
+  "before": 1790626145,
+  "after": 1790626149,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/advanced/project",
+      "ppid": 1659752
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-0ef155/1/project",
+      "ppid": 1661299
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-advanced",
+    "endpoint_task_id": "live-advanced",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-0ef155/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/advanced/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-advanced",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626148.1661374.14549",
+    "spawn_gen": "s1790626148.1659026.2276"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-0ef155/1/project', 'ppid': 1661299}]
+SCENARIO PASS advanced
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-fresh /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/fresh/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-fresh harness=opencode kind=scout window=primary:fm-live-fresh worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-713f8b/1/project
+
+{
+  "scenario": "fresh",
+  "exit": 0,
+  "initial": "94cdc2692f008ebf60cdc339f9dfc83bdc04623c",
+  "expected": "812c7bd66ec40708c4a47d3fedaaa29fd4520a24",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-713f8b/1/project",
+  "head": "812c7bd66ec40708c4a47d3fedaaa29fd4520a24",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626089",
+  "marker_after": "1790626089",
+  "before": 1790626149,
+  "after": 1790626154,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/fresh/project",
+      "ppid": 1664170
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-713f8b/1/project",
+      "ppid": 1665259
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-fresh",
+    "endpoint_task_id": "live-fresh",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-713f8b/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/fresh/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-fresh",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626152.1665352.26105",
+    "spawn_gen": "s1790626152.1663498.5074"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-713f8b/1/project', 'ppid': 1665259}]
+SCENARIO PASS fresh
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-missing /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-missing harness=opencode kind=scout window=primary:fm-live-missing worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project
+
+{
+  "scenario": "missing",
+  "exit": 0,
+  "initial": "d9553649bc998501a10dd587574c09172af37d51",
+  "expected": "55627be58f923bc1e8da95d25b6059b1d9534918",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+  "head": "55627be58f923bc1e8da95d25b6059b1d9534918",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": null,
+  "marker_after": "1790626167",
+  "before": 1790626164,
+  "after": 1790626169,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project",
+      "ppid": 1669533
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+      "ppid": 1670080
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+      "ppid": 1670095
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+      "ppid": 1670115
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-missing",
+    "endpoint_task_id": "live-missing",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/missing/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-missing",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626167.1670177.11631",
+    "spawn_gen": "s1790626167.1669248.7599"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project', 'ppid': 1670080}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project', 'ppid': 1670095}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-63e129/1/project', 'ppid': 1670115}]
+SCENARIO PASS missing
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-expired /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/expired/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-expired harness=opencode kind=scout window=primary:fm-live-expired worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project
+
+{
+  "scenario": "expired",
+  "exit": 0,
+  "initial": "45b25d38dccfdd5f5e0c45cbe2a460680fd3e0ef",
+  "expected": "0f0453f872aa612ed07445ce7a932c822bbfcbf1",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project",
+  "head": "0f0453f872aa612ed07445ce7a932c822bbfcbf1",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790622569",
+  "marker_after": "1790626172",
+  "before": 1790626169,
+  "after": 1790626174,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/expired/project",
+      "ppid": 1671805
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project",
+      "ppid": 1672396
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project",
+      "ppid": 1672430
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project",
+      "ppid": 1672479
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-expired",
+    "endpoint_task_id": "live-expired",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/expired/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-expired",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626172.1672523.17613",
+    "spawn_gen": "s1790626172.1671565.10302"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project', 'ppid': 1672396}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project', 'ppid': 1672430}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-ac1c5c/1/project', 'ppid': 1672479}]
+SCENARIO PASS expired
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-future /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/future/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-future harness=opencode kind=scout window=primary:fm-live-future worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project
+
+{
+  "scenario": "future",
+  "exit": 0,
+  "initial": "0bd0e758a72c20c84db536ab0498e459d0114960",
+  "expected": "6a7de468f8154700147baf8473253e35b227d651",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project",
+  "head": "6a7de468f8154700147baf8473253e35b227d651",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790629774",
+  "marker_after": "1790626176",
+  "before": 1790626174,
+  "after": 1790626178,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/future/project",
+      "ppid": 1674290
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project",
+      "ppid": 1675074
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project",
+      "ppid": 1675079
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project",
+      "ppid": 1675088
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-future",
+    "endpoint_task_id": "live-future",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/future/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-future",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626176.1675112.24069",
+    "spawn_gen": "s1790626177.1674038.13188"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project', 'ppid': 1675074}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project', 'ppid': 1675079}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-77a574/1/project', 'ppid': 1675088}]
+SCENARIO PASS future
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-invalid /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-invalid harness=opencode kind=scout window=primary:fm-live-invalid worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project
+
+{
+  "scenario": "invalid",
+  "exit": 0,
+  "initial": "0c8565d77e4f5f194481b5adee94d6bd93297e97",
+  "expected": "aa1a4bc0c0601715462657797181afbf5d4ec7ef",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project",
+  "head": "aa1a4bc0c0601715462657797181afbf5d4ec7ef",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "not-a-time",
+  "marker_after": "1790626181",
+  "before": 1790626179,
+  "after": 1790626183,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid/project",
+      "ppid": 1677128
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project",
+      "ppid": 1677701
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project",
+      "ppid": 1677706
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project",
+      "ppid": 1677715
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-invalid",
+    "endpoint_task_id": "live-invalid",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-invalid",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626181.1677739.5239",
+    "spawn_gen": "s1790626181.1676667.3608"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project', 'ppid': 1677701}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project', 'ppid': 1677706}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-98a02b/1/project', 'ppid': 1677715}]
+SCENARIO PASS invalid
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-unwritable /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unwritable/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-unwritable harness=opencode kind=scout window=primary:fm-live-unwritable worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project
+
+{
+  "scenario": "unwritable",
+  "exit": 0,
+  "initial": "c12e9977a57392828c1c02a166d3190e192a5d9d",
+  "expected": "d9ac5b902841a42e393620b4b787a12646d592a7",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+  "head": "d9ac5b902841a42e393620b4b787a12646d592a7",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "directory",
+  "marker_after": "directory",
+  "before": 1790626183,
+  "after": 1790626188,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unwritable/project",
+      "ppid": 1680064
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680778
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680783
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+      "ppid": 1680792
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-unwritable",
+    "endpoint_task_id": "live-unwritable",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unwritable/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-unwritable",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626186.1680816.16772",
+    "spawn_gen": "s1790626186.1679598.15915"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project', 'ppid': 1680778}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project', 'ppid': 1680783}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-6855c1/1/project', 'ppid': 1680792}]
+SCENARIO PASS unwritable
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='0' bin/fm-spawn.sh live-disabled /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/disabled/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-disabled harness=opencode kind=scout window=primary:fm-live-disabled worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project
+
+{
+  "scenario": "disabled",
+  "exit": 0,
+  "initial": "44abe0e1a6b8d2c9ebaacd8eaf04b7fd780d2ad9",
+  "expected": "ddee95e7268fa474f3b3f6294e679bb649f2ab8c",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project",
+  "head": "ddee95e7268fa474f3b3f6294e679bb649f2ab8c",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790626128",
+  "marker_after": "1790626191",
+  "before": 1790626188,
+  "after": 1790626193,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/disabled/project",
+      "ppid": 1683385
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project",
+      "ppid": 1684177
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project",
+      "ppid": 1684191
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project",
+      "ppid": 1684203
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-disabled",
+    "endpoint_task_id": "live-disabled",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/disabled/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-disabled",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626191.1684227.28032",
+    "spawn_gen": "s1790626191.1682934.6001"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project', 'ppid': 1684177}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project', 'ppid': 1684191}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-351e4c/1/project', 'ppid': 1684203}]
+SCENARIO PASS disabled
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='' bin/fm-spawn.sh live-empty-window /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/empty-window/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-empty-window harness=opencode kind=scout window=primary:fm-live-empty-window worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-d7f752/1/project
+
+{
+  "scenario": "empty-window",
+  "exit": 0,
+  "initial": "187753602155ef9fe0fd55c06a89461afdd03a17",
+  "expected": "4bd4e67e095fb426c8253ad5b6932891cbaa4170",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-d7f752/1/project",
+  "head": "4bd4e67e095fb426c8253ad5b6932891cbaa4170",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626133",
+  "marker_after": "1790626133",
+  "before": 1790626193,
+  "after": 1790626198,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/empty-window/project",
+      "ppid": 1686733
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-d7f752/1/project",
+      "ppid": 1687174
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-empty-window",
+    "endpoint_task_id": "live-empty-window",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-d7f752/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/empty-window/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-empty-window",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626196.1687227.27481",
+    "spawn_gen": "s1790626196.1686299.16993"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-d7f752/1/project', 'ppid': 1687174}]
+SCENARIO PASS empty-window
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='bad' bin/fm-spawn.sh live-invalid-window /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid-window/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-invalid-window harness=opencode kind=scout window=primary:fm-live-invalid-window worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-60cdef/1/project
+
+{
+  "scenario": "invalid-window",
+  "exit": 0,
+  "initial": "418e1bf3c99dc403f44f87a9cb89e57c1446937a",
+  "expected": "acaad32911c4aa66e12e960cff39e122ce619878",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-60cdef/1/project",
+  "head": "acaad32911c4aa66e12e960cff39e122ce619878",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626139",
+  "marker_after": "1790626139",
+  "before": 1790626199,
+  "after": 1790626204,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid-window/project",
+      "ppid": 1690058
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-60cdef/1/project",
+      "ppid": 1690591
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-invalid-window",
+    "endpoint_task_id": "live-invalid-window",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-60cdef/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/invalid-window/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-invalid-window",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626201.1690620.12680",
+    "spawn_gen": "s1790626201.1689597.28950"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-60cdef/1/project', 'ppid': 1690591}]
+SCENARIO PASS invalid-window
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='30' bin/fm-spawn.sh live-custom-window /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/custom-window/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-custom-window harness=opencode kind=scout window=primary:fm-live-custom-window worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project
+
+{
+  "scenario": "custom-window",
+  "exit": 0,
+  "initial": "c072a2780e1f60db3ceb4fe36188566105699681",
+  "expected": "dacfa30097dcb17d905f56c19fa58cf2865fc806",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project",
+  "head": "dacfa30097dcb17d905f56c19fa58cf2865fc806",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790626144",
+  "marker_after": "1790626207",
+  "before": 1790626204,
+  "after": 1790626209,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/custom-window/project",
+      "ppid": 1693783
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project",
+      "ppid": 1694335
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project",
+      "ppid": 1694363
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project",
+      "ppid": 1694393
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-custom-window",
+    "endpoint_task_id": "live-custom-window",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/custom-window/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-custom-window",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626207.1694461.12463",
+    "spawn_gen": "s1790626207.1693523.12387"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project', 'ppid': 1694335}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project', 'ppid': 1694363}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-5d7aa6/1/project', 'ppid': 1694393}]
+SCENARIO PASS custom-window
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-switched /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/switched/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-switched harness=opencode kind=scout window=primary:fm-live-switched worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project
+
+{
+  "scenario": "switched",
+  "exit": 0,
+  "initial": "5bf3a787b84fd9c8ce34046a0d8675205e3dc756",
+  "expected": "291e9ff66bf7d6975c2b48e6920fa15b5729cfb2",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+  "head": "291e9ff66bf7d6975c2b48e6920fa15b5729cfb2",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790626150",
+  "marker_after": "1790626212",
+  "before": 1790626210,
+  "after": 1790626215,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/switched/project",
+      "ppid": 1697543
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+      "ppid": 1698199
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+      "ppid": 1698257
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+      "ppid": 1698285
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+      "ppid": 1698328
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-switched",
+    "endpoint_task_id": "live-switched",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/switched/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-switched",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626212.1698387.10133",
+    "spawn_gen": "s1790626213.1697298.12446"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project', 'ppid': 1698199}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project', 'ppid': 1698257}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project', 'ppid': 1698285}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-2aabea/1/project', 'ppid': 1698328}]
+SCENARIO PASS switched
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-renamed /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/renamed/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-renamed harness=opencode kind=scout window=primary:fm-live-renamed worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project
+
+{
+  "scenario": "renamed",
+  "exit": 0,
+  "initial": "f1b8b923ecf1a53f84e300a1e124b6b7dcd74050",
+  "expected": "78f390ae354e305cf8153f76e21d9965124c2e61",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+  "head": "78f390ae354e305cf8153f76e21d9965124c2e61",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790626156",
+  "marker_after": "1790626218",
+  "before": 1790626216,
+  "after": 1790626221,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/renamed/project",
+      "ppid": 1701629
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702416
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702437
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702461
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702492
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-renamed",
+    "endpoint_task_id": "live-renamed",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/renamed/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-renamed",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626219.1702533.8664",
+    "spawn_gen": "s1790626219.1701396.1780"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project', 'ppid': 1702416}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project', 'ppid': 1702437}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project', 'ppid': 1702461}, {'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project', 'ppid': 1702492}]
+SCENARIO PASS renamed
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-failure-missing /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-missing/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+error: could not resolve origin's current default branch for pooled worktree '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-c541d7/1/project'; refusing to launch from a potentially stale base
+
+{
+  "scenario": "failure-missing",
+  "exit": 1,
+  "initial": "a32dc87d23597d5edcf36db2a25bb7d4299a0337",
+  "expected": "1f7d0e02e66f3428fc96dc22d1afc80f93f3caa0",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-c541d7/1/project",
+  "head": "1f7d0e02e66f3428fc96dc22d1afc80f93f3caa0",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": null,
+  "marker_after": null,
+  "before": 1790626222,
+  "after": 1790626224,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-missing/project",
+      "ppid": 1705804
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-c541d7/1/project",
+      "ppid": 1706533
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-c541d7/1/project",
+      "ppid": 1706538
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+SCENARIO PASS failure-missing
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-failure-expired /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-expired/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+error: could not resolve origin's current default branch for pooled worktree '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-49a5fa/1/project'; refusing to launch from a potentially stale base
+
+{
+  "scenario": "failure-expired",
+  "exit": 1,
+  "initial": "015acf92be04fd2bb319572486d96346b0ba3762",
+  "expected": "387f8932b8a4e8148ac11dbe1f8910a03a163cf4",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-49a5fa/1/project",
+  "head": "387f8932b8a4e8148ac11dbe1f8910a03a163cf4",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790622624",
+  "marker_after": "1790622624",
+  "before": 1790626224,
+  "after": 1790626227,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-expired/project",
+      "ppid": 1706880
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-49a5fa/1/project",
+      "ppid": 1707607
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-49a5fa/1/project",
+      "ppid": 1707612
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+SCENARIO PASS failure-expired
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-failure-fresh /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-fresh/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+error: could not resolve origin's current default branch for pooled worktree '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project'; refusing to launch from a potentially stale base
+
+{
+  "scenario": "failure-fresh",
+  "exit": 1,
+  "initial": "04a4c5d6a9b27b28433ac92314f97fdf4e4eed45",
+  "expected": "48231a02de675e88c91009f8a3cd201fa6eee507",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+  "head": "48231a02de675e88c91009f8a3cd201fa6eee507",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626167",
+  "marker_after": "1790626167",
+  "before": 1790626227,
+  "after": 1790626230,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/failure-fresh/project",
+      "ppid": 1707954
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708793
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708809
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-a300dd/1/project",
+      "ppid": 1708836
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+SCENARIO PASS failure-fresh
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-unreachable /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+error: treehouse get did not enter an isolated worktree within 60s (last seen '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable/project': it is the spawning project itself; spawning project '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable/project'); inspect window primary:fm-live-unreachable
+
+{
+  "scenario": "unreachable",
+  "exit": 1,
+  "initial": "e688a167f88a1d6c74ab8a4b02a13800c17cf9f2",
+  "expected": "f930662120ac80660fa61adbe54051009512144d",
+  "worktree": null,
+  "head": null,
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626170",
+  "marker_after": "1790626170",
+  "before": 1790626230,
+  "after": 1790626291,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable/project",
+      "ppid": 1709248
+    }
+  ],
+  "metadata": {},
+  "refs": ""
+}
+Traceback (most recent call last):
+  File "/home/kumarpawa/.no-mistakes/evidence/01M3MDRF9H7N4F6XWPBX8M7NFW/live-spawn-driver.py", line 88, in <module>
+    for name in sys.argv[1:]: scenario(name)
+                              ^^^^^^^^^^^^^^
+  File "/home/kumarpawa/.no-mistakes/evidence/01M3MDRF9H7N4F6XWPBX8M7NFW/live-spawn-driver.py", line 85, in scenario
+    assert 'refusing to launch from a potentially stale base' in out.stdout, 'wrong refusal'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: wrong refusal
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-late-advance /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/late-advance/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+spawned live-late-advance harness=opencode kind=scout window=primary:fm-live-late-advance worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project
+
+{
+  "scenario": "late-advance",
+  "exit": 0,
+  "initial": "8dcd8bc5b6ad61de3ea95278a9b09d241d7e6cff",
+  "expected": "a8d71ff08f8f66cbc87e4174818cd962ee30ceea",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+  "head": "a8d71ff08f8f66cbc87e4174818cd962ee30ceea",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626270",
+  "marker_after": "1790626270",
+  "before": 1790626330,
+  "after": 1790626336,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/late-advance/project",
+      "ppid": 1736580
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+      "ppid": 1737231
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-late-advance",
+    "endpoint_task_id": "live-late-advance",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/late-advance/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-late-advance",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626333.1737307.25221",
+    "spawn_gen": "s1790626333.1736341.32541"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+POOLED_CONTACTS [{'cwd': '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-aa5d0f/1/project', 'ppid': 1737231}]
+Allocated HEAD before freshness: 0ea6bb944f9a99eb172e479cf44ecc49771c0e48 ; HEAD after: a8d71ff08f8f66cbc87e4174818cd962ee30ceea
+SCENARIO PASS late-advance
+$ FM_ORIGIN_HEAD_REFRESH_SECONDS='600' bin/fm-spawn.sh live-unreachable-after-allocation /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable-after-allocation/project --scout --harness opencode --backend tmux
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/home
+fatal: '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable-after-allocation/absent.git' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+error: could not fetch origin for pooled worktree '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project'; refusing to launch from a potentially stale base
+
+{
+  "scenario": "unreachable-after-allocation",
+  "exit": 1,
+  "initial": "a153fa31dfacf61f985013641499a65196a2baac",
+  "expected": "bb3d2847d93acf91fe66479aad59389ff681eca4",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+  "head": "bb3d2847d93acf91fe66479aad59389ff681eca4",
+  "origin_head": "refs/remotes/origin/main",
+  "marker_before": "1790626276",
+  "marker_after": "1790626276",
+  "before": 1790626336,
+  "after": 1790626339,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/unreachable-after-allocation/project",
+      "ppid": 1740812
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+      "ppid": 1741495
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-eaad01/1/project",
+      "ppid": 1741520
+    }
+  ],
+  "metadata": {},
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main"
+}
+SCENARIO PASS unreachable-after-allocation

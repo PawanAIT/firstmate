@@ -1,0 +1,49 @@
+{
+  "scenario": "renamed",
+  "exit": 0,
+  "initial": "f1b8b923ecf1a53f84e300a1e124b6b7dcd74050",
+  "expected": "78f390ae354e305cf8153f76e21d9965124c2e61",
+  "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+  "head": "78f390ae354e305cf8153f76e21d9965124c2e61",
+  "origin_head": "refs/remotes/origin/trunk",
+  "marker_before": "1790626156",
+  "marker_after": "1790626218",
+  "before": 1790626216,
+  "after": 1790626221,
+  "contacts": [
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/renamed/project",
+      "ppid": 1701629
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702416
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702437
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702461
+    },
+    {
+      "cwd": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+      "ppid": 1702492
+    }
+  ],
+  "metadata": {
+    "window": "primary:fm-live-renamed",
+    "endpoint_task_id": "live-renamed",
+    "worktree": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/trees/.treehouse/project-e974ed/1/project",
+    "project": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MDRF9H7N4F6XWPBX8M7NFW/.l/renamed/project",
+    "harness": "opencode",
+    "kind": "scout",
+    "tasktmp": "/tmp/fm-live-renamed",
+    "model": "default",
+    "effort": "default",
+    "busy_gen": "g1790626219.1702533.8664",
+    "spawn_gen": "s1790626219.1701396.1780"
+  },
+  "refs": "refs/heads/main\nrefs/remotes/origin/HEAD\nrefs/remotes/origin/main\nrefs/remotes/origin/trunk"
+}
