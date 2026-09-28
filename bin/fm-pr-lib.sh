@@ -109,6 +109,7 @@ github_read_required_contexts() {
     rm -f "$api_err"
   fi
 
+  # shellcheck disable=SC2034 # Output global, read by the sourcing caller.
   FM_PR_GITHUB_REQUIRED=$(printf '%s\n%s\n' "$classic" "$ruleset" | jq -sc '
     unique_by([.context, .app_id]) | group_by(.context)
     | map(if any(.[]; .app_id != null) then map(select(.app_id != null)) else . end) | add // []')
