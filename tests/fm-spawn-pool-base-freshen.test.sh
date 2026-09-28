@@ -348,7 +348,7 @@ test_origin_head_refresh_window() {
 
 test_refresh_marker_is_reused_by_another_pool_slot() {
   local rec id out status marker stamp
-  id=pool-shared-marker-first
+  id='pool-shared-marker-first'
   rec=$(make_case shared-marker "$id")
   read_case_record "$rec"
   out=$(run_spawn "$id" --scout)
@@ -362,7 +362,7 @@ test_refresh_marker_is_reused_by_another_pool_slot() {
   git -C "$CASE_DIR/publisher" push --quiet origin HEAD:refs/heads/trunk
   git --git-dir="$CASE_DIR/origin.git" symbolic-ref HEAD refs/heads/trunk
   count_origin_contacts
-  id=pool-shared-marker-second
+  id='pool-shared-marker-second'
   fm_test_spawn_brief "$HOME_DIR" "$id"
 
   out=$(run_spawn "$id" --scout)
