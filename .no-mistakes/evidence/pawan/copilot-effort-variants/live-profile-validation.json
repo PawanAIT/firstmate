@@ -1,0 +1,256 @@
+[
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "low",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/github-copilot/claude-opus-4.7/low\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "medium",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/github-copilot/claude-opus-4.7/medium\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "high",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/github-copilot/claude-opus-4.7/high\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "xhigh",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/github-copilot/claude-opus-4.7/xhigh\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "max",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/github-copilot/claude-opus-4.7/max\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "high",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/anthropic/claude-sonnet-4-5/high\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "max",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/anthropic/claude-sonnet-4-5/max\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "low",
+      "provider": "openai",
+      "model": "openai/gpt-5"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/openai/gpt-5/low\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "xhigh",
+      "provider": "openai",
+      "model": "openai/gpt-5"
+    },
+    "expected_valid": true,
+    "bootstrap": {
+      "rc": 0,
+      "output": "BOOTSTRAP_INFO: crew dispatch active config/crew-dispatch.json\nBOOTSTRAP_INFO: crew dispatch default: opencode/openai/gpt-5/xhigh\n"
+    },
+    "resolver": {
+      "rc": 0,
+      "output": "dispatch-resolve:\n  status: escalate\n  reason: no rules to match\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "high",
+      "provider": "github-copilot",
+      "model": "github-copilot/"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:high\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "ultra",
+      "provider": "github-copilot",
+      "model": "github-copilot/claude-opus-4.7"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:ultra\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "high",
+      "provider": "github-copilot"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:high\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "medium",
+      "provider": "anthropic",
+      "model": "anthropic/claude-sonnet-4-5"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:medium\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "max",
+      "provider": "openai",
+      "model": "openai/gpt-5"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:max\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  },
+  {
+    "profile": {
+      "harness": "opencode",
+      "effort": "high",
+      "provider": "google",
+      "model": "google/gemini-3.8-flash"
+    },
+    "expected_valid": false,
+    "bootstrap": {
+      "rc": 0,
+      "output": "CREW_DISPATCH: invalid config/crew-dispatch.json - invalid effort: opencode:high\n"
+    },
+    "resolver": {
+      "rc": 2,
+      "output": "error: malformed rules file: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/schema/fm/config/crew-dispatch.json - each default profile effort must be supported by its harness and model\n"
+    }
+  }
+]

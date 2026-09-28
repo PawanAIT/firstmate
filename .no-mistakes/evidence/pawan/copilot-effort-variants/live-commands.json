@@ -1,0 +1,1049 @@
+[
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-lab-home.sh",
+      "create",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm"
+    ],
+    "rc": 0,
+    "output": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\n"
+  },
+  {
+    "argv": [
+      "git",
+      "init",
+      "-q",
+      "-b",
+      "main",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "add",
+      "README.md"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "-c",
+      "user.name=Lab",
+      "-c",
+      "user.email=lab@example.invalid",
+      "commit",
+      "-qm",
+      "fixture"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "-f",
+      "/dev/null",
+      "new-session",
+      "-d",
+      "-s",
+      "fm-lab-copilot",
+      "-x",
+      "120",
+      "-y",
+      "35",
+      "-c",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817",
+      "bash --noprofile --norc"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "set-option",
+      "-g",
+      "default-shell",
+      "/bin/bash"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "set-option",
+      "-g",
+      "default-command",
+      "bash --noprofile --norc"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot",
+      "#{socket_path},#{pid},0"
+    ],
+    "rc": 0,
+    "output": "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls,1798720,0\n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "models",
+      "github-copilot",
+      "--verbose",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "github-copilot/claude-fable-5\n{\n  \"id\": \"claude-fable-5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Fable 5\",\n  \"family\": \"claude-fable\",\n  \"api\": {\n    \"id\": \"claude-fable-5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 10,\n    \"output\": 50,\n    \"cache\": {\n      \"read\": 1,\n      \"write\": 12.5\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-06-09\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-fable-5.1\n{\n  \"id\": \"claude-fable-5.1\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Fable 5.1\",\n  \"family\": \"claude-fable\",\n  \"api\": {\n    \"id\": \"claude-fable-5.1\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 10,\n    \"output\": 50,\n    \"cache\": {\n      \"read\": 0.25,\n      \"write\": 12.5\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-09-01\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-haiku-4.5\n{\n  \"id\": \"claude-haiku-4.5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Haiku 4.5 (latest)\",\n  \"family\": \"claude-haiku\",\n  \"api\": {\n    \"id\": \"claude-haiku-4.5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 1,\n    \"output\": 5,\n    \"cache\": {\n      \"read\": 0.1,\n      \"write\": 1.25\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 136000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2025-10-15\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/claude-opus-4.7\n{\n  \"id\": \"claude-opus-4.7\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Opus 4.7\",\n  \"family\": \"claude-opus\",\n  \"api\": {\n    \"id\": \"claude-opus-4.7\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 5,\n    \"output\": 25,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 6.25\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 168000,\n    \"output\": 32000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-04-16\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-opus-4.7-fast\n{\n  \"id\": \"claude-opus-4.7-fast\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Opus 4.7 Fast\",\n  \"family\": \"claude-opus\",\n  \"api\": {\n    \"id\": \"claude-opus-4.7\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {\n    \"anthropic-beta\": \"fast-mode-2026-02-01\"\n  },\n  \"options\": {\n    \"speed\": \"fast\"\n  },\n  \"cost\": {\n    \"input\": 30,\n    \"output\": 150,\n    \"cache\": {\n      \"read\": 3,\n      \"write\": 37.5\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 168000,\n    \"output\": 32000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-04-16\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-opus-4.8\n{\n  \"id\": \"claude-opus-4.8\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Opus 4.8\",\n  \"family\": \"claude-opus\",\n  \"api\": {\n    \"id\": \"claude-opus-4.8\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 5,\n    \"output\": 25,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 6.25\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 168000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-05-28\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-opus-4.8-fast\n{\n  \"id\": \"claude-opus-4.8-fast\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Opus 4.8 Fast\",\n  \"family\": \"claude-opus\",\n  \"api\": {\n    \"id\": \"claude-opus-4.8\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {\n    \"anthropic-beta\": \"fast-mode-2026-02-01\"\n  },\n  \"options\": {\n    \"speed\": \"fast\"\n  },\n  \"cost\": {\n    \"input\": 10,\n    \"output\": 50,\n    \"cache\": {\n      \"read\": 1,\n      \"write\": 12.5\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 168000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-05-28\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-opus-5\n{\n  \"id\": \"claude-opus-5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Opus 5\",\n  \"family\": \"claude-opus\",\n  \"api\": {\n    \"id\": \"claude-opus-5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 5,\n    \"output\": 25,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 6.25\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"input\": 936000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-24\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-sonnet-4.6\n{\n  \"id\": \"claude-sonnet-4.6\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Sonnet 4.6\",\n  \"family\": \"claude-sonnet\",\n  \"api\": {\n    \"id\": \"claude-sonnet-4.6\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 3,\n    \"output\": 15,\n    \"cache\": {\n      \"read\": 0.3,\n      \"write\": 3.75\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 168000,\n    \"output\": 32000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-02-17\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/claude-sonnet-5\n{\n  \"id\": \"claude-sonnet-5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Claude Sonnet 5\",\n  \"family\": \"claude-sonnet\",\n  \"api\": {\n    \"id\": \"claude-sonnet-5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2,\n    \"output\": 10,\n    \"cache\": {\n      \"read\": 0.2,\n      \"write\": 2.5\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-06-30\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/gemini-3.5-flash\n{\n  \"id\": \"gemini-3.5-flash\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Gemini 3.5 Flash\",\n  \"family\": \"gemini-flash\",\n  \"api\": {\n    \"id\": \"gemini-3.5-flash\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 1.5,\n    \"output\": 9,\n    \"cache\": {\n      \"read\": 0.15,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 200000,\n    \"input\": 128000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": true,\n      \"image\": true,\n      \"video\": true,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-05-19\",\n  \"variants\": {\n    \"minimal\": {\n      \"reasoningEffort\": \"minimal\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/gemini-3.6-flash\n{\n  \"id\": \"gemini-3.6-flash\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Gemini 3.6 Flash\",\n  \"family\": \"gemini-flash\",\n  \"api\": {\n    \"id\": \"gemini-3.6-flash\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.75,\n    \"output\": 3.75,\n    \"cache\": {\n      \"read\": 0.075,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"input\": 936000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-21\",\n  \"variants\": {\n    \"minimal\": {\n      \"reasoningEffort\": \"minimal\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/gemini-3.7-flash\n{\n  \"id\": \"gemini-3.7-flash\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Gemini 3.7 Flash\",\n  \"family\": \"gemini-flash\",\n  \"api\": {\n    \"id\": \"gemini-3.7-flash\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.75,\n    \"output\": 3.75,\n    \"cache\": {\n      \"read\": 0.075,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"input\": 936000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-08-13\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/gemini-3.8-flash\n{\n  \"id\": \"gemini-3.8-flash\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Gemini 3.8 Flash\",\n  \"family\": \"gemini-flash\",\n  \"api\": {\n    \"id\": \"gemini-3.8-flash\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.75,\n    \"output\": 3.75,\n    \"cache\": {\n      \"read\": 0.075,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 1000000,\n    \"input\": 936000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-09-02\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/gpt-5-mini\n{\n  \"id\": \"gpt-5-mini\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5 Mini\",\n  \"family\": \"gpt-mini\",\n  \"api\": {\n    \"id\": \"gpt-5-mini\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.25,\n    \"output\": 2,\n    \"cache\": {\n      \"read\": 0.025,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 264000,\n    \"input\": 128000,\n    \"output\": 64000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2025-08-07\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/gpt-5.3-codex\n{\n  \"id\": \"gpt-5.3-codex\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.3 Codex\",\n  \"family\": \"gpt-codex\",\n  \"api\": {\n    \"id\": \"gpt-5.3-codex\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 1.75,\n    \"output\": 14,\n    \"cache\": {\n      \"read\": 0.175,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 400000,\n    \"input\": 272000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-02-05\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/gpt-5.4\n{\n  \"id\": \"gpt-5.4\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.4\",\n  \"family\": \"gpt\",\n  \"api\": {\n    \"id\": \"gpt-5.4\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2.5,\n    \"output\": 15,\n    \"cache\": {\n      \"read\": 0.25,\n      \"write\": 0\n    },\n    \"tiers\": [\n      {\n        \"input\": 5,\n        \"output\": 22.5,\n        \"cache\": {\n          \"read\": 0.5,\n          \"write\": 0\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 272000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 0.5,\n        \"write\": 0\n      },\n      \"input\": 5,\n      \"output\": 22.5\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-03-05\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/gpt-5.4-mini\n{\n  \"id\": \"gpt-5.4-mini\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.4 mini\",\n  \"family\": \"gpt-mini\",\n  \"api\": {\n    \"id\": \"gpt-5.4-mini\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.75,\n    \"output\": 4.5,\n    \"cache\": {\n      \"read\": 0.075,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 400000,\n    \"input\": 272000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-03-17\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/gpt-5.4-nano\n{\n  \"id\": \"gpt-5.4-nano\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.4 nano\",\n  \"family\": \"gpt-nano\",\n  \"api\": {\n    \"id\": \"gpt-5.4-nano\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.2,\n    \"output\": 1.25,\n    \"cache\": {\n      \"read\": 0.02,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 400000,\n    \"input\": 272000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-03-17\",\n  \"variants\": {}\n}\ngithub-copilot/gpt-5.5\n{\n  \"id\": \"gpt-5.5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.5\",\n  \"family\": \"gpt\",\n  \"api\": {\n    \"id\": \"gpt-5.5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 5,\n    \"output\": 30,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 0\n    },\n    \"tiers\": [\n      {\n        \"input\": 10,\n        \"output\": 45,\n        \"cache\": {\n          \"read\": 1,\n          \"write\": 0\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 272000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 1,\n        \"write\": 0\n      },\n      \"input\": 10,\n      \"output\": 45\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-04-23\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/gpt-5.6-luna\n{\n  \"id\": \"gpt-5.6-luna\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.6 Luna\",\n  \"family\": \"gpt-luna\",\n  \"api\": {\n    \"id\": \"gpt-5.6-luna\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.2,\n    \"output\": 1.2,\n    \"cache\": {\n      \"read\": 0.02,\n      \"write\": 0.25\n    },\n    \"tiers\": [\n      {\n        \"input\": 0.4,\n        \"output\": 1.8,\n        \"cache\": {\n          \"read\": 0.04,\n          \"write\": 0.5\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 200000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 0.04,\n        \"write\": 0.5\n      },\n      \"input\": 0.4,\n      \"output\": 1.8\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-09\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/gpt-5.6-sol\n{\n  \"id\": \"gpt-5.6-sol\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.6 Sol\",\n  \"family\": \"gpt-sol\",\n  \"api\": {\n    \"id\": \"gpt-5.6-sol\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 4,\n    \"output\": 20,\n    \"cache\": {\n      \"read\": 0.4,\n      \"write\": 5\n    },\n    \"tiers\": [\n      {\n        \"input\": 8,\n        \"output\": 30,\n        \"cache\": {\n          \"read\": 0.8,\n          \"write\": 10\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 272000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 0.8,\n        \"write\": 10\n      },\n      \"input\": 8,\n      \"output\": 30\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-09\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/gpt-5.6-terra\n{\n  \"id\": \"gpt-5.6-terra\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-5.6 Terra\",\n  \"family\": \"gpt-terra\",\n  \"api\": {\n    \"id\": \"gpt-5.6-terra\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2,\n    \"output\": 12,\n    \"cache\": {\n      \"read\": 0.2,\n      \"write\": 2.5\n    },\n    \"tiers\": [\n      {\n        \"input\": 4,\n        \"output\": 18,\n        \"cache\": {\n          \"read\": 0.4,\n          \"write\": 5\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 272000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 0.4,\n        \"write\": 5\n      },\n      \"input\": 4,\n      \"output\": 18\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-09\",\n  \"variants\": {\n    \"none\": {\n      \"reasoningEffort\": \"none\"\n    },\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/gpt-6-astra\n{\n  \"id\": \"gpt-6-astra\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"GPT-6 Astra\",\n  \"family\": \"gpt-astra\",\n  \"api\": {\n    \"id\": \"gpt-6-astra\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 10,\n    \"output\": 50,\n    \"cache\": {\n      \"read\": 1,\n      \"write\": 12.5\n    },\n    \"tiers\": [\n      {\n        \"input\": 20,\n        \"output\": 75,\n        \"cache\": {\n          \"read\": 2,\n          \"write\": 25\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 272000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 2,\n        \"write\": 25\n      },\n      \"input\": 20,\n      \"output\": 75\n    }\n  },\n  \"limit\": {\n    \"context\": 1050000,\n    \"input\": 922000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-09-04\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/grok-4.5\n{\n  \"id\": \"grok-4.5\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Grok 4.5\",\n  \"family\": \"grok\",\n  \"api\": {\n    \"id\": \"grok-4.5\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2,\n    \"output\": 6,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 0\n    },\n    \"tiers\": [\n      {\n        \"input\": 4,\n        \"output\": 12,\n        \"cache\": {\n          \"read\": 1,\n          \"write\": 0\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 200000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 1,\n        \"write\": 0\n      },\n      \"input\": 4,\n      \"output\": 12\n    }\n  },\n  \"limit\": {\n    \"context\": 500000,\n    \"input\": 372000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-08\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/grok-4.6\n{\n  \"id\": \"grok-4.6\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Grok 4.6\",\n  \"family\": \"grok\",\n  \"api\": {\n    \"id\": \"grok-4.6\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2,\n    \"output\": 6,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 0\n    },\n    \"tiers\": [\n      {\n        \"input\": 4,\n        \"output\": 12,\n        \"cache\": {\n          \"read\": 1,\n          \"write\": 0\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 200000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 1,\n        \"write\": 0\n      },\n      \"input\": 4,\n      \"output\": 12\n    }\n  },\n  \"limit\": {\n    \"context\": 500000,\n    \"input\": 372000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-08-12\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/grok-4.7\n{\n  \"id\": \"grok-4.7\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Grok 4.7\",\n  \"family\": \"grok\",\n  \"api\": {\n    \"id\": \"grok-4.7\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 2,\n    \"output\": 6,\n    \"cache\": {\n      \"read\": 0.5,\n      \"write\": 0\n    },\n    \"tiers\": [\n      {\n        \"input\": 4,\n        \"output\": 12,\n        \"cache\": {\n          \"read\": 1,\n          \"write\": 0\n        },\n        \"tier\": {\n          \"type\": \"context\",\n          \"size\": 200000\n        }\n      }\n    ],\n    \"experimentalOver200K\": {\n      \"cache\": {\n        \"read\": 1,\n        \"write\": 0\n      },\n      \"input\": 4,\n      \"output\": 12\n    }\n  },\n  \"limit\": {\n    \"context\": 500000,\n    \"input\": 372000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-09-21\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"xhigh\": {\n      \"reasoningEffort\": \"xhigh\"\n    }\n  }\n}\ngithub-copilot/kimi-k2.7-code\n{\n  \"id\": \"kimi-k2.7-code\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Kimi K2.7 Code\",\n  \"family\": \"kimi-k2\",\n  \"api\": {\n    \"id\": \"kimi-k2.7-code\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.95,\n    \"output\": 4,\n    \"cache\": {\n      \"read\": 0.19,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 256000,\n    \"input\": 224000,\n    \"output\": 32000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-06-12\",\n  \"variants\": {}\n}\ngithub-copilot/kimi-k3\n{\n  \"id\": \"kimi-k3\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"Kimi K3\",\n  \"family\": \"kimi-k3\",\n  \"api\": {\n    \"id\": \"kimi-k3\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 3,\n    \"output\": 15,\n    \"cache\": {\n      \"read\": 0.3,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 1048576,\n    \"output\": 131072\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-07-16\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    },\n    \"max\": {\n      \"reasoningEffort\": \"max\"\n    }\n  }\n}\ngithub-copilot/mai-code-1-flash-picker\n{\n  \"id\": \"mai-code-1-flash-picker\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"MAI-Code-1-Flash\",\n  \"family\": \"mai\",\n  \"api\": {\n    \"id\": \"mai-code-1-flash-picker\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.75,\n    \"output\": 4.5,\n    \"cache\": {\n      \"read\": 0.075,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 256000,\n    \"input\": 128000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": true,\n    \"reasoning\": true,\n    \"attachment\": false,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-06-02\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\ngithub-copilot/mai-code-1.1-flash\n{\n  \"id\": \"mai-code-1.1-flash\",\n  \"providerID\": \"github-copilot\",\n  \"name\": \"MAI-Code-1.1-Flash\",\n  \"family\": \"mai\",\n  \"api\": {\n    \"id\": \"mai-code-1.1-flash\",\n    \"url\": \"https://api.githubcopilot.com\",\n    \"npm\": \"@ai-sdk/github-copilot\"\n  },\n  \"status\": \"active\",\n  \"headers\": {},\n  \"options\": {},\n  \"cost\": {\n    \"input\": 0.2,\n    \"output\": 1.2,\n    \"cache\": {\n      \"read\": 0.02,\n      \"write\": 0\n    }\n  },\n  \"limit\": {\n    \"context\": 256000,\n    \"input\": 128000,\n    \"output\": 128000\n  },\n  \"capabilities\": {\n    \"temperature\": false,\n    \"reasoning\": true,\n    \"attachment\": true,\n    \"toolcall\": true,\n    \"input\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": true,\n      \"video\": false,\n      \"pdf\": true\n    },\n    \"output\": {\n      \"text\": true,\n      \"audio\": false,\n      \"image\": false,\n      \"video\": false,\n      \"pdf\": false\n    },\n    \"interleaved\": false\n  },\n  \"release_date\": \"2026-08-11\",\n  \"variants\": {\n    \"low\": {\n      \"reasoningEffort\": \"low\"\n    },\n    \"medium\": {\n      \"reasoningEffort\": \"medium\"\n    },\n    \"high\": {\n      \"reasoningEffort\": \"high\"\n    }\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-listed",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-listed/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-listed",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7",
+      "--effort",
+      "xhigh"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nspawned copilot-live-listed harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-listed worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-listed",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nWelcome to Ubuntu 24.04.5 LTS (GNU/Linux 6.18.33.2-microsoft-standard-WSL2 x86_64)\n\n * Documentation:  https://help.ubuntu.com\n * Management:     https://landscape.canonical.com\n * Support:        https://ubuntu.com/pro\n\n System information as of Mon Sep 28 20:20:28 UTC 2026\n\n  System load:  1.17                Processes:             65\n  Usage of /:   0.9% of 1006.85GB   Users logged in:       2\n  Memory usage: 6%                  IPv4 address for eth0: 172.24.139.98\n  Swap usage:   5%\n\n\nThis message is shown once a day. To disable it please create the\n/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/user/.hushlogin file.\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export GOTMPDIR=/tmp/fm-copilot-live-listed/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export FM_TASK_ID=copilot-live-listed\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ . '/tmp/fm-copilot-live-listed+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626830.1798819.8186.sh'\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-listed",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"model\": {\n    \"providerID\": \"github-copilot\",\n    \"modelID\": \"claude-opus-4.7\"\n  },\n  \"variant\": \"xhigh\",\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-listed",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1799014\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-listed"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-unlisted",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-unlisted/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-unlisted",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/gpt-5-mini",
+      "--effort",
+      "max"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nnotice: OpenCode lists no 'max' variant for 'github-copilot/gpt-5-mini' (its variants: low medium high); effort=max is recorded but omitted from the launch\nspawned copilot-live-unlisted harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-unlisted worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unlisted",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export GOTMPDIR=/tmp/fm-copilot-live-unlisted/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export FM_TASK_ID=copilot-live-unlisted\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ . '/tmp/fm-copilot-live-unlisted+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626843.1799965.3526.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unlisted",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unlisted",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1800163\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unlisted"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-none",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-none/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-none",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/gpt-5.4-nano",
+      "--effort",
+      "high"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nnotice: OpenCode lists no 'high' variant for 'github-copilot/gpt-5.4-nano' (its variants: none listed); effort=high is recorded but omitted from the launch\nspawned copilot-live-none harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-none worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-none",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export GOTMPDIR=/tmp/fm-copilot-live-none/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export FM_TASK_ID=copilot-live-none\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ . '/tmp/fm-copilot-live-none+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626858.1801260.6604.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-none",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-none",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1801455\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-none"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-noeffort",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-noeffort/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-noeffort",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nspawned copilot-live-noeffort harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-noeffort worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-noeffort",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export GOTMPDIR=/tmp/fm-copilot-live-noeffort/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export FM_TASK_ID=copilot-live-noeffort\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ . '/tmp/fm-copilot-live-noeffort+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626872.1802892.3420.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-noeffort",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-noeffort",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1803069\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-noeffort"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-mktemp",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-mktemp/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-mktemp",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7",
+      "--effort",
+      "high"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\ninjected variant-directory failure\nnotice: could not read the variants of 'github-copilot/claude-opus-4.7' from 'opencode models github-copilot --verbose --pure'; effort=high is recorded but omitted from the launch\nspawned copilot-live-mktemp harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-mktemp worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-mktemp",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export GOTMPDIR=/tmp/fm-copilot-live-mktemp/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export FM_TASK_ID=copilot-live-mktemp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ . '/tmp/fm-copilot-live-mktemp+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626886.1804300.24373.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-mktemp",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-mktemp",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1804478\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-mktemp"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-unavailable",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-unavailable/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-unavailable",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7",
+      "--effort",
+      "high"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nnotice: could not read the variants of 'github-copilot/claude-opus-4.7' from 'opencode models github-copilot --verbose --pure'; effort=high is recorded but omitted from the launch\nspawned copilot-live-unavailable harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-unavailable worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unavailable",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export GOTMPDIR=/tmp/fm-copilot-live-unavailable/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export FM_TASK_ID=copilot-live-unavailable\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ . '/tmp/fm-copilot-live-unavailable+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626900.1806020.11600.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unavailable",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"websearch\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unavailable",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1806215\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-unavailable"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-timeout",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-timeout/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-timeout",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7",
+      "--effort",
+      "high"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nnotice: 'opencode models github-copilot' did not answer within 1s; effort=high for 'github-copilot/claude-opus-4.7' is recorded but omitted from the launch\nspawned copilot-live-timeout harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-timeout worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-timeout",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export GOTMPDIR=/tmp/fm-copilot-live-timeout/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export FM_TASK_ID=copilot-live-timeout\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ . '/tmp/fm-copilot-live-timeout+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626915.1807909.289.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-timeout",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-timeout",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1808098\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-timeout"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-anthropic",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-anthropic/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-anthropic",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "anthropic/claude-sonnet-4-5",
+      "--effort",
+      "high"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nspawned copilot-live-anthropic harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-anthropic worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-anthropic",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export GOTMPDIR=/tmp/fm-copilot-live-anthropic/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ export FM_TASK_ID=copilot-live-anthropic\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/2/project$ . '/tmp/fm-copilot-live-anthropic+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626929.1809946.14553.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-anthropic",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"model\": {\n    \"providerID\": \"anthropic\",\n    \"modelID\": \"claude-sonnet-4-5\"\n  },\n  \"variant\": \"high\",\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"edit\": true,\n    \"write\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-anthropic",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1810136\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-anthropic"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-openai",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-openai/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-openai",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "openai/gpt-5",
+      "--effort",
+      "xhigh"
+    ],
+    "rc": 0,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nspawned copilot-live-openai harness=opencode kind=scout window=fm-lab-copilot:fm-copilot-live-openai worktree=/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-openai",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "bash-5.2$ treehouse get\n\ud83c\udf33 Setting up worktree...\n\ud83c\udf33 Entered worktree at /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project. Type 'exit' to return.\nTo run a command as administrator (user \"root\"), use \"sudo <command>\".\nSee \"man sudo_root\" for details.\n\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ cd -- '/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project'\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export GOTMPDIR=/tmp/fm-copilot-live-openai/gotmp\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export COMPACT_ADVISER_DISABLE=1\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ export FM_TASK_ID=copilot-live-openai\nkumarpawa@CPC-kumar-Y38I8:/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/pool/.treehouse/project-d990a1/1/project$ . '/tmp/fm-copilot-live-openai+8e02ef9677bfe395da58230609b10b59c0009677e9de49c399e836b4c4e9aeaf/launch.s1790626943.1812046.20344.sh'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "capture-pane",
+      "-p",
+      "-J",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-openai",
+      "-S",
+      "-500"
+    ],
+    "rc": 0,
+    "output": "                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n                                                                                                                        \n"
+  },
+  {
+    "argv": [
+      "opencode",
+      "debug",
+      "agent",
+      "build",
+      "--pure"
+    ],
+    "rc": 0,
+    "output": "{\n  \"name\": \"build\",\n  \"description\": \"The default agent. Executes tools based on configured permissions.\",\n  \"options\": {},\n  \"permission\": [\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"doom_loop\",\n      \"action\": \"ask\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/tmp/opencode/*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_exit\",\n      \"action\": \"deny\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.*\",\n      \"action\": \"ask\"\n    },\n    {\n      \"permission\": \"read\",\n      \"pattern\": \"*.env.example\",\n      \"action\": \"allow\"\n    },\n    {\n      \"permission\": \"question\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"plan_enter\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"*\",\n      \"action\": \"allow\",\n      \"pattern\": \"*\"\n    },\n    {\n      \"permission\": \"external_directory\",\n      \"pattern\": \"/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/xdg/data/opencode/tool-output/*\",\n      \"action\": \"allow\"\n    }\n  ],\n  \"mode\": \"primary\",\n  \"native\": true,\n  \"model\": {\n    \"providerID\": \"openai\",\n    \"modelID\": \"gpt-5\"\n  },\n  \"variant\": \"xhigh\",\n  \"tools\": {\n    \"invalid\": true,\n    \"question\": true,\n    \"bash\": true,\n    \"read\": true,\n    \"glob\": true,\n    \"grep\": true,\n    \"task\": true,\n    \"webfetch\": true,\n    \"todowrite\": true,\n    \"skill\": true,\n    \"apply_patch\": true\n  }\n}\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "display-message",
+      "-p",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-openai",
+      "#{pane_pid}"
+    ],
+    "rc": 0,
+    "output": "1812223\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-window",
+      "-t",
+      "fm-lab-copilot:fm-copilot-live-openai"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-brief.sh",
+      "copilot-live-abort",
+      "project",
+      "--scout"
+    ],
+    "rc": 0,
+    "output": "scaffolded: /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm/data/copilot-live-abort/brief.md (scout; replace {TASK} and {FIRSTMATE_SPEC})\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "new-window",
+      "-d",
+      "-t",
+      "fm-lab-copilot:",
+      "-n",
+      "fm-copilot-live-abort",
+      "-c",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project"
+    ],
+    "rc": 0,
+    "output": ""
+  },
+  {
+    "argv": [
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/bin/fm-spawn.sh",
+      "copilot-live-abort",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/project",
+      "--scout",
+      "--harness",
+      "opencode",
+      "--backend",
+      "tmux",
+      "--model",
+      "github-copilot/claude-opus-4.7",
+      "--effort",
+      "high"
+    ],
+    "rc": 1,
+    "output": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nerror: window fm-lab-copilot:fm-copilot-live-abort already exists\n"
+  },
+  {
+    "argv": [
+      "tmux",
+      "-S",
+      "/home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.ls",
+      "kill-server"
+    ],
+    "rc": 0,
+    "output": ""
+  }
+]

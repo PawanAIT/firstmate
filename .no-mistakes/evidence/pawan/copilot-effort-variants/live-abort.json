@@ -1,0 +1,21 @@
+{
+  "stdout": "fm-gate-refuse: gate agent lifecycle permitted only against lab home /home/kumarpawa/.no-mistakes/worktrees/c936b9d8764d/01M3MFYGY4G18KEGCRZ56T9817/.test-tmp/live/fm\nerror: window fm-lab-copilot:fm-copilot-live-abort already exists\n",
+  "rc": 1,
+  "catalog_calls": [
+    {
+      "argv": [
+        "models",
+        "github-copilot",
+        "--verbose",
+        "--pure"
+      ],
+      "cwd": "/",
+      "time": 1790626955.4548075
+    },
+    {
+      "stopped_real_opencode_pid": 1814357
+    }
+  ],
+  "variant_temp_directories": [],
+  "task_metadata_exists": false
+}

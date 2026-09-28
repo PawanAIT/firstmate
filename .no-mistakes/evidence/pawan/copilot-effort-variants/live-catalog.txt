@@ -1,0 +1,2190 @@
+github-copilot/claude-fable-5
+{
+  "id": "claude-fable-5",
+  "providerID": "github-copilot",
+  "name": "Claude Fable 5",
+  "family": "claude-fable",
+  "api": {
+    "id": "claude-fable-5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 10,
+    "output": 50,
+    "cache": {
+      "read": 1,
+      "write": 12.5
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-06-09",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-fable-5.1
+{
+  "id": "claude-fable-5.1",
+  "providerID": "github-copilot",
+  "name": "Claude Fable 5.1",
+  "family": "claude-fable",
+  "api": {
+    "id": "claude-fable-5.1",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 10,
+    "output": 50,
+    "cache": {
+      "read": 0.25,
+      "write": 12.5
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-09-01",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-haiku-4.5
+{
+  "id": "claude-haiku-4.5",
+  "providerID": "github-copilot",
+  "name": "Claude Haiku 4.5 (latest)",
+  "family": "claude-haiku",
+  "api": {
+    "id": "claude-haiku-4.5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 1,
+    "output": 5,
+    "cache": {
+      "read": 0.1,
+      "write": 1.25
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 136000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2025-10-15",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/claude-opus-4.7
+{
+  "id": "claude-opus-4.7",
+  "providerID": "github-copilot",
+  "name": "Claude Opus 4.7",
+  "family": "claude-opus",
+  "api": {
+    "id": "claude-opus-4.7",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 5,
+    "output": 25,
+    "cache": {
+      "read": 0.5,
+      "write": 6.25
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 168000,
+    "output": 32000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-04-16",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-opus-4.7-fast
+{
+  "id": "claude-opus-4.7-fast",
+  "providerID": "github-copilot",
+  "name": "Claude Opus 4.7 Fast",
+  "family": "claude-opus",
+  "api": {
+    "id": "claude-opus-4.7",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {
+    "anthropic-beta": "fast-mode-2026-02-01"
+  },
+  "options": {
+    "speed": "fast"
+  },
+  "cost": {
+    "input": 30,
+    "output": 150,
+    "cache": {
+      "read": 3,
+      "write": 37.5
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 168000,
+    "output": 32000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-04-16",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-opus-4.8
+{
+  "id": "claude-opus-4.8",
+  "providerID": "github-copilot",
+  "name": "Claude Opus 4.8",
+  "family": "claude-opus",
+  "api": {
+    "id": "claude-opus-4.8",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 5,
+    "output": 25,
+    "cache": {
+      "read": 0.5,
+      "write": 6.25
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 168000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-05-28",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-opus-4.8-fast
+{
+  "id": "claude-opus-4.8-fast",
+  "providerID": "github-copilot",
+  "name": "Claude Opus 4.8 Fast",
+  "family": "claude-opus",
+  "api": {
+    "id": "claude-opus-4.8",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {
+    "anthropic-beta": "fast-mode-2026-02-01"
+  },
+  "options": {
+    "speed": "fast"
+  },
+  "cost": {
+    "input": 10,
+    "output": 50,
+    "cache": {
+      "read": 1,
+      "write": 12.5
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 168000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-05-28",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-opus-5
+{
+  "id": "claude-opus-5",
+  "providerID": "github-copilot",
+  "name": "Claude Opus 5",
+  "family": "claude-opus",
+  "api": {
+    "id": "claude-opus-5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 5,
+    "output": 25,
+    "cache": {
+      "read": 0.5,
+      "write": 6.25
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "input": 936000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-24",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-sonnet-4.6
+{
+  "id": "claude-sonnet-4.6",
+  "providerID": "github-copilot",
+  "name": "Claude Sonnet 4.6",
+  "family": "claude-sonnet",
+  "api": {
+    "id": "claude-sonnet-4.6",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 3,
+    "output": 15,
+    "cache": {
+      "read": 0.3,
+      "write": 3.75
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 168000,
+    "output": 32000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-02-17",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/claude-sonnet-5
+{
+  "id": "claude-sonnet-5",
+  "providerID": "github-copilot",
+  "name": "Claude Sonnet 5",
+  "family": "claude-sonnet",
+  "api": {
+    "id": "claude-sonnet-5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2,
+    "output": 10,
+    "cache": {
+      "read": 0.2,
+      "write": 2.5
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-06-30",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/gemini-3.5-flash
+{
+  "id": "gemini-3.5-flash",
+  "providerID": "github-copilot",
+  "name": "Gemini 3.5 Flash",
+  "family": "gemini-flash",
+  "api": {
+    "id": "gemini-3.5-flash",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 1.5,
+    "output": 9,
+    "cache": {
+      "read": 0.15,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 200000,
+    "input": 128000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": true,
+      "image": true,
+      "video": true,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-05-19",
+  "variants": {
+    "minimal": {
+      "reasoningEffort": "minimal"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/gemini-3.6-flash
+{
+  "id": "gemini-3.6-flash",
+  "providerID": "github-copilot",
+  "name": "Gemini 3.6 Flash",
+  "family": "gemini-flash",
+  "api": {
+    "id": "gemini-3.6-flash",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.75,
+    "output": 3.75,
+    "cache": {
+      "read": 0.075,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "input": 936000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-21",
+  "variants": {
+    "minimal": {
+      "reasoningEffort": "minimal"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/gemini-3.7-flash
+{
+  "id": "gemini-3.7-flash",
+  "providerID": "github-copilot",
+  "name": "Gemini 3.7 Flash",
+  "family": "gemini-flash",
+  "api": {
+    "id": "gemini-3.7-flash",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.75,
+    "output": 3.75,
+    "cache": {
+      "read": 0.075,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "input": 936000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-08-13",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/gemini-3.8-flash
+{
+  "id": "gemini-3.8-flash",
+  "providerID": "github-copilot",
+  "name": "Gemini 3.8 Flash",
+  "family": "gemini-flash",
+  "api": {
+    "id": "gemini-3.8-flash",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.75,
+    "output": 3.75,
+    "cache": {
+      "read": 0.075,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 1000000,
+    "input": 936000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-09-02",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/gpt-5-mini
+{
+  "id": "gpt-5-mini",
+  "providerID": "github-copilot",
+  "name": "GPT-5 Mini",
+  "family": "gpt-mini",
+  "api": {
+    "id": "gpt-5-mini",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.25,
+    "output": 2,
+    "cache": {
+      "read": 0.025,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 264000,
+    "input": 128000,
+    "output": 64000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2025-08-07",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/gpt-5.3-codex
+{
+  "id": "gpt-5.3-codex",
+  "providerID": "github-copilot",
+  "name": "GPT-5.3 Codex",
+  "family": "gpt-codex",
+  "api": {
+    "id": "gpt-5.3-codex",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 1.75,
+    "output": 14,
+    "cache": {
+      "read": 0.175,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 400000,
+    "input": 272000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-02-05",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/gpt-5.4
+{
+  "id": "gpt-5.4",
+  "providerID": "github-copilot",
+  "name": "GPT-5.4",
+  "family": "gpt",
+  "api": {
+    "id": "gpt-5.4",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2.5,
+    "output": 15,
+    "cache": {
+      "read": 0.25,
+      "write": 0
+    },
+    "tiers": [
+      {
+        "input": 5,
+        "output": 22.5,
+        "cache": {
+          "read": 0.5,
+          "write": 0
+        },
+        "tier": {
+          "type": "context",
+          "size": 272000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 0.5,
+        "write": 0
+      },
+      "input": 5,
+      "output": 22.5
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-03-05",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/gpt-5.4-mini
+{
+  "id": "gpt-5.4-mini",
+  "providerID": "github-copilot",
+  "name": "GPT-5.4 mini",
+  "family": "gpt-mini",
+  "api": {
+    "id": "gpt-5.4-mini",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.75,
+    "output": 4.5,
+    "cache": {
+      "read": 0.075,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 400000,
+    "input": 272000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-03-17",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/gpt-5.4-nano
+{
+  "id": "gpt-5.4-nano",
+  "providerID": "github-copilot",
+  "name": "GPT-5.4 nano",
+  "family": "gpt-nano",
+  "api": {
+    "id": "gpt-5.4-nano",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.2,
+    "output": 1.25,
+    "cache": {
+      "read": 0.02,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 400000,
+    "input": 272000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-03-17",
+  "variants": {}
+}
+github-copilot/gpt-5.5
+{
+  "id": "gpt-5.5",
+  "providerID": "github-copilot",
+  "name": "GPT-5.5",
+  "family": "gpt",
+  "api": {
+    "id": "gpt-5.5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 5,
+    "output": 30,
+    "cache": {
+      "read": 0.5,
+      "write": 0
+    },
+    "tiers": [
+      {
+        "input": 10,
+        "output": 45,
+        "cache": {
+          "read": 1,
+          "write": 0
+        },
+        "tier": {
+          "type": "context",
+          "size": 272000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 1,
+        "write": 0
+      },
+      "input": 10,
+      "output": 45
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-04-23",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/gpt-5.6-luna
+{
+  "id": "gpt-5.6-luna",
+  "providerID": "github-copilot",
+  "name": "GPT-5.6 Luna",
+  "family": "gpt-luna",
+  "api": {
+    "id": "gpt-5.6-luna",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.2,
+    "output": 1.2,
+    "cache": {
+      "read": 0.02,
+      "write": 0.25
+    },
+    "tiers": [
+      {
+        "input": 0.4,
+        "output": 1.8,
+        "cache": {
+          "read": 0.04,
+          "write": 0.5
+        },
+        "tier": {
+          "type": "context",
+          "size": 200000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 0.04,
+        "write": 0.5
+      },
+      "input": 0.4,
+      "output": 1.8
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-09",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/gpt-5.6-sol
+{
+  "id": "gpt-5.6-sol",
+  "providerID": "github-copilot",
+  "name": "GPT-5.6 Sol",
+  "family": "gpt-sol",
+  "api": {
+    "id": "gpt-5.6-sol",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 4,
+    "output": 20,
+    "cache": {
+      "read": 0.4,
+      "write": 5
+    },
+    "tiers": [
+      {
+        "input": 8,
+        "output": 30,
+        "cache": {
+          "read": 0.8,
+          "write": 10
+        },
+        "tier": {
+          "type": "context",
+          "size": 272000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 0.8,
+        "write": 10
+      },
+      "input": 8,
+      "output": 30
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-09",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/gpt-5.6-terra
+{
+  "id": "gpt-5.6-terra",
+  "providerID": "github-copilot",
+  "name": "GPT-5.6 Terra",
+  "family": "gpt-terra",
+  "api": {
+    "id": "gpt-5.6-terra",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2,
+    "output": 12,
+    "cache": {
+      "read": 0.2,
+      "write": 2.5
+    },
+    "tiers": [
+      {
+        "input": 4,
+        "output": 18,
+        "cache": {
+          "read": 0.4,
+          "write": 5
+        },
+        "tier": {
+          "type": "context",
+          "size": 272000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 0.4,
+        "write": 5
+      },
+      "input": 4,
+      "output": 18
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-09",
+  "variants": {
+    "none": {
+      "reasoningEffort": "none"
+    },
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/gpt-6-astra
+{
+  "id": "gpt-6-astra",
+  "providerID": "github-copilot",
+  "name": "GPT-6 Astra",
+  "family": "gpt-astra",
+  "api": {
+    "id": "gpt-6-astra",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 10,
+    "output": 50,
+    "cache": {
+      "read": 1,
+      "write": 12.5
+    },
+    "tiers": [
+      {
+        "input": 20,
+        "output": 75,
+        "cache": {
+          "read": 2,
+          "write": 25
+        },
+        "tier": {
+          "type": "context",
+          "size": 272000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 2,
+        "write": 25
+      },
+      "input": 20,
+      "output": 75
+    }
+  },
+  "limit": {
+    "context": 1050000,
+    "input": 922000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-09-04",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/grok-4.5
+{
+  "id": "grok-4.5",
+  "providerID": "github-copilot",
+  "name": "Grok 4.5",
+  "family": "grok",
+  "api": {
+    "id": "grok-4.5",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2,
+    "output": 6,
+    "cache": {
+      "read": 0.5,
+      "write": 0
+    },
+    "tiers": [
+      {
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 1,
+          "write": 0
+        },
+        "tier": {
+          "type": "context",
+          "size": 200000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 1,
+        "write": 0
+      },
+      "input": 4,
+      "output": 12
+    }
+  },
+  "limit": {
+    "context": 500000,
+    "input": 372000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-08",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/grok-4.6
+{
+  "id": "grok-4.6",
+  "providerID": "github-copilot",
+  "name": "Grok 4.6",
+  "family": "grok",
+  "api": {
+    "id": "grok-4.6",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2,
+    "output": 6,
+    "cache": {
+      "read": 0.5,
+      "write": 0
+    },
+    "tiers": [
+      {
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 1,
+          "write": 0
+        },
+        "tier": {
+          "type": "context",
+          "size": 200000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 1,
+        "write": 0
+      },
+      "input": 4,
+      "output": 12
+    }
+  },
+  "limit": {
+    "context": 500000,
+    "input": 372000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-08-12",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/grok-4.7
+{
+  "id": "grok-4.7",
+  "providerID": "github-copilot",
+  "name": "Grok 4.7",
+  "family": "grok",
+  "api": {
+    "id": "grok-4.7",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 2,
+    "output": 6,
+    "cache": {
+      "read": 0.5,
+      "write": 0
+    },
+    "tiers": [
+      {
+        "input": 4,
+        "output": 12,
+        "cache": {
+          "read": 1,
+          "write": 0
+        },
+        "tier": {
+          "type": "context",
+          "size": 200000
+        }
+      }
+    ],
+    "experimentalOver200K": {
+      "cache": {
+        "read": 1,
+        "write": 0
+      },
+      "input": 4,
+      "output": 12
+    }
+  },
+  "limit": {
+    "context": 500000,
+    "input": 372000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-09-21",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "xhigh": {
+      "reasoningEffort": "xhigh"
+    }
+  }
+}
+github-copilot/kimi-k2.7-code
+{
+  "id": "kimi-k2.7-code",
+  "providerID": "github-copilot",
+  "name": "Kimi K2.7 Code",
+  "family": "kimi-k2",
+  "api": {
+    "id": "kimi-k2.7-code",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.95,
+    "output": 4,
+    "cache": {
+      "read": 0.19,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 256000,
+    "input": 224000,
+    "output": 32000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-06-12",
+  "variants": {}
+}
+github-copilot/kimi-k3
+{
+  "id": "kimi-k3",
+  "providerID": "github-copilot",
+  "name": "Kimi K3",
+  "family": "kimi-k3",
+  "api": {
+    "id": "kimi-k3",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 3,
+    "output": 15,
+    "cache": {
+      "read": 0.3,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 1048576,
+    "output": 131072
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-07-16",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    },
+    "max": {
+      "reasoningEffort": "max"
+    }
+  }
+}
+github-copilot/mai-code-1-flash-picker
+{
+  "id": "mai-code-1-flash-picker",
+  "providerID": "github-copilot",
+  "name": "MAI-Code-1-Flash",
+  "family": "mai",
+  "api": {
+    "id": "mai-code-1-flash-picker",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.75,
+    "output": 4.5,
+    "cache": {
+      "read": 0.075,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 256000,
+    "input": 128000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": true,
+    "reasoning": true,
+    "attachment": false,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-06-02",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
+github-copilot/mai-code-1.1-flash
+{
+  "id": "mai-code-1.1-flash",
+  "providerID": "github-copilot",
+  "name": "MAI-Code-1.1-Flash",
+  "family": "mai",
+  "api": {
+    "id": "mai-code-1.1-flash",
+    "url": "https://api.githubcopilot.com",
+    "npm": "@ai-sdk/github-copilot"
+  },
+  "status": "active",
+  "headers": {},
+  "options": {},
+  "cost": {
+    "input": 0.2,
+    "output": 1.2,
+    "cache": {
+      "read": 0.02,
+      "write": 0
+    }
+  },
+  "limit": {
+    "context": 256000,
+    "input": 128000,
+    "output": 128000
+  },
+  "capabilities": {
+    "temperature": false,
+    "reasoning": true,
+    "attachment": true,
+    "toolcall": true,
+    "input": {
+      "text": true,
+      "audio": false,
+      "image": true,
+      "video": false,
+      "pdf": true
+    },
+    "output": {
+      "text": true,
+      "audio": false,
+      "image": false,
+      "video": false,
+      "pdf": false
+    },
+    "interleaved": false
+  },
+  "release_date": "2026-08-11",
+  "variants": {
+    "low": {
+      "reasoningEffort": "low"
+    },
+    "medium": {
+      "reasoningEffort": "medium"
+    },
+    "high": {
+      "reasoningEffort": "high"
+    }
+  }
+}
