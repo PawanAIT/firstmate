@@ -1939,6 +1939,11 @@ agy_model_validate() {  # <agy-bin> <model>
   return 1
 }
 
+opencode_variant_read_notice() {
+  local model=$1 effort=$2 provider=${1%%/*}
+  echo "notice: could not read the variants of '$model' from 'opencode models $provider --verbose --pure'; effort=$effort is recorded but omitted from the launch" >&2
+}
+
 # OpenCode per-model variant lookup for the effort axis (effort_flag_for_harness).
 # A github-copilot/* model's reasoning variants differ per model, not per
 # provider (opencode 1.18.32 lists high|max for claude-haiku-4.5 but none
@@ -1977,7 +1982,7 @@ opencode_listed_variant() {  # <provider/model> <effort>
   if fm_timed_out "$rc"; then
     echo "notice: 'opencode models $provider' did not answer within ${bound}s; effort=$effort for '$model' is recorded but omitted from the launch" >&2
   else
-    echo "notice: could not read the variants of '$model' from 'opencode models $provider --verbose --pure'; effort=$effort is recorded but omitted from the launch" >&2
+    opencode_variant_read_notice "$model" "$effort"
   fi
 }
 
@@ -2418,7 +2423,8 @@ fi
 # three seconds on 1.18.32). It runs in the background while the worktree and
 # endpoint are provisioned and is collected before the task record exists. An
 # abort before then only removes its output directory; the lookup itself ends
-# at its own bound.
+# at its own bound. If its output directory cannot be created, the lookup is
+# skipped and the effort is recorded but omitted with a failed-read notice.
 OPENCODE_VARIANT=
 OPENCODE_VARIANT_PID=
 OPENCODE_VARIANT_DIR=
@@ -2429,7 +2435,7 @@ opencode:0:effort:github-copilot/?*)
     OPENCODE_VARIANT_PID=$!
   else
     OPENCODE_VARIANT_DIR=
-    OPENCODE_VARIANT=$(opencode_listed_variant "$MODEL" "$EFFORT")
+    opencode_variant_read_notice "$MODEL" "$EFFORT"
   fi
   ;;
 esac

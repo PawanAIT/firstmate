@@ -1003,6 +1003,38 @@ test_opencode_omits_copilot_variant_when_catalog_lookup_fails() {
   pass "opencode omits a copilot effort when its catalog lookup fails or times out"
 }
 
+test_opencode_skips_catalog_lookup_when_temp_directory_fails() {
+  local rec id out status launch lookups
+  id=profile-opencode-copilot-mktemp
+  rec=$(make_spawn_case "$id" opencode "$id")
+  read_case_record "$rec"
+  make_opencode_catalog_stub "$FAKEBIN_DIR"
+  lookups="$CASE_DIR/opencode-lookups.log"
+  printf '#!/usr/bin/env bash\nreal_mktemp=%q\n' "$(command -v mktemp)" > "$FAKEBIN_DIR/mktemp"
+  cat >> "$FAKEBIN_DIR/mktemp" <<'SH'
+case "$*" in
+'-d '*/fm-opencode-variant.XXXXXX) exit 1 ;;
+esac
+exec "$real_mktemp" "$@"
+SH
+  chmod +x "$FAKEBIN_DIR/mktemp"
+
+  out=$(FM_FAKE_OPENCODE_LOOKUP_LOG=$lookups \
+    run_ship_spawn "$HOME_DIR" "$WT_DIR" "$FAKEBIN_DIR" "$LAUNCH_LOG" "$id" "$PROJ_DIR" --model github-copilot/claude-opus-5.5 --effort high)
+  status=$?
+  expect_code 0 "$status" "opencode spawn must survive variant directory creation failure"$'\n'"$out"
+  assert_meta_profile "$HOME_DIR/state/$id.meta" opencode github-copilot/claude-opus-5.5 high
+  launch=$(cat "$LAUNCH_LOG")
+  assert_contains "$launch" \
+    "OPENCODE_CONFIG_CONTENT='{\"permission\":{\"*\":\"allow\"}}' opencode --model 'github-copilot/claude-opus-5.5' --prompt" \
+    "opencode must omit the variant when its lookup directory cannot be created"
+  assert_contains "$out" \
+    "notice: could not read the variants of 'github-copilot/claude-opus-5.5' from 'opencode models github-copilot --verbose --pure'; effort=high is recorded but omitted from the launch" \
+    "variant directory creation failure must print the failed-read notice"
+  [ ! -e "$lookups" ] || fail "opencode consulted the catalog after directory creation failed: $(cat "$lookups")"
+  pass "opencode skips the catalog and omits effort when its lookup directory cannot be created"
+}
+
 test_opencode_skips_catalog_lookup_without_copilot_effort() {
   local rec id out status launch lookups shape model effort expected
   for shape in copilot-noeffort anthropic-effort; do
@@ -2094,6 +2126,7 @@ test_opencode_emits_copilot_variant_the_model_lists
 test_opencode_omits_copilot_variant_the_model_lacks
 test_opencode_notices_copilot_model_without_variants
 test_opencode_omits_copilot_variant_when_catalog_lookup_fails
+test_opencode_skips_catalog_lookup_when_temp_directory_fails
 test_opencode_skips_catalog_lookup_without_copilot_effort
 test_opencode_copilot_lookup_leaves_nothing_behind_on_abort
 test_native_effort_validator_keeps_axes_separate
