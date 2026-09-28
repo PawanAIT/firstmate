@@ -87,8 +87,8 @@
 #   check: <state>/<id>.check.sh: checks-green
 #                          a direct-PR task with yolo=on has its GitHub PR open
 #                          and green at the recorded pr_head
-#                          (bin/fm-pr-green-poll.sh); surfaced once per recorded
-#                          head, and a prompt to land, never a merge by itself
+#                          (bin/fm-pr-green-poll.sh); surfaced per recorded head
+#                          and passing check set, never a merge by itself
 #   check: process-event result captured: <keys>
 #                          a durably captured process-to-event result is queued
 #                          and has not been surfaced yet; reported once per
@@ -2558,18 +2558,15 @@ retire_merged_pr_poll() {  # <id>
   fi
 }
 
-# Print the recorded GitHub pr_head that a direct-PR task with yolo=on still
-# owes its one checks-green wake for (bin/fm-pr-green-poll.sh). Every other
-# task, a task recording no valid head, and a head already woken for return 1,
-# so their sweep makes no extra forge read.
-pr_poll_green_head() {  # <id> <provider> <host> <path> <number>
+# Print the recorded GitHub pr_head eligible for a green read. Even an already
+# notified head must be read again: the passing required-check set can grow.
+pr_poll_green_head() {  # <id> <provider>
   local meta="$STATE/$1.meta" head
   [ "$2" = github ] || return 1
   [ "$(fm_meta_get "$meta" mode)" = direct-PR ] || return 1
   [ "$(fm_meta_get "$meta" yolo)" = on ] || return 1
   head=$(fm_meta_get "$meta" pr_head)
   fm_pr_head_valid "$head" || return 1
-  ! fm_pr_poll_green_already_notified "$STATE" "$1" "$2" "$3" "$4" "$5" "$head" || return 1
   printf '%s\n' "$head"
 }
 
@@ -2732,6 +2729,7 @@ while :; do
       [ -e "$c" ] || continue
       is_pr_poll=0
       green_head=
+      green_checks=
       if [ "$(basename "$c")" = x-watch.check.sh ]; then
         if fmx_poll_shim_valid "$c" "$FM_HOME" "$FM_ROOT" \
           && [ -f "$FM_ROOT/bin/fm-x-poll.sh" ] && [ ! -L "$FM_ROOT/bin/fm-x-poll.sh" ]; then
@@ -2763,11 +2761,14 @@ while :; do
             "$provider" "$url" "$host" "$path" "$number" || exit 1
           out=$FM_CHECK_RESULT
           # Only a poll that read no merge asks whether the recorded head went
-          # green, and only its exact line counts as a result.
-          if [ -z "$out" ] && green_head=$(pr_poll_green_head "$id" "$provider" "$host" "$path" "$number"); then
+          # green. Deduplicate the verified head AND passing check set.
+          if [ -z "$out" ] && green_head=$(pr_poll_green_head "$id" "$provider"); then
             run_check_capture "$SCRIPT_DIR/fm-pr-green-poll.sh" "$url" "$green_head" || exit 1
-            if [ "$FM_CHECK_RESULT" = checks-green ]; then
-              out=checks-green
+            if [[ "$FM_CHECK_RESULT" =~ ^checks-green\ ([0-9a-f]{64})$ ]]; then
+              green_checks=${BASH_REMATCH[1]}
+              if ! fm_pr_poll_green_already_notified "$STATE" "$id" "$provider" "$host" "$path" "$number" "$green_head" "$green_checks"; then
+                out='checks-green'
+              fi
             fi
           fi
         elif fm_custom_check_snapshot_prepare "$STATE" "$id"; then
@@ -2844,12 +2845,12 @@ EOF
           wake "$reason"
         fi
         if [ -n "$green_head" ] && [ "$out" = checks-green ]; then
-          # Recording the head after the durable row makes an interruption
-          # repeat this wake rather than lose it, and recording it under the
+          # Recording the head and check set after the durable row makes an
+          # interruption repeat this wake rather than lose it. Holding the
           # task's control lock, which teardown also holds, keeps a concurrent
           # teardown from leaving the marker behind.
           fm_wake_append check "$c" "$reason" || exit 1
-          fm_pr_poll_green_mark_notified "$STATE" "$id" "$provider" "$host" "$path" "$number" "$green_head" \
+          fm_pr_poll_green_mark_notified "$STATE" "$id" "$provider" "$host" "$path" "$number" "$green_head" "$green_checks" \
             || triage_log "checks-green wake for $id was not recorded as delivered, so it may repeat"
           pr_poll_control_release || exit 1
           touch "$STATE/.last-check"

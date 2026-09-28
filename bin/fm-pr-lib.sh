@@ -1402,14 +1402,14 @@ fm_pr_poll_merge_notified_remove() {  # <state> <id>
 # --- checks-green notification marker ----------------------------------------
 # bin/fm-pr-green-poll.sh would read green on every sweep while a yolo
 # direct-PR task's recorded head stays open and green, so this marker holds that
-# reading to one wake per head. It binds the canonical PR identity and the head
-# woken for, so a different head or pull request for the task wakes again. It
+# reading to one wake per head and passing check set. It binds the canonical PR
+# identity, head, and check-set digest, so newly passing checks wake again. It
 # records a delivered wake and never grants merge authority. Anything but an
 # exact private record reads as not yet notified, which errs toward a repeated
 # wake rather than a lost one.
-fm_pr_poll_green_marker_matches() {  # <marker> <device> <provider> <host> <path> <number> <head>
+fm_pr_poll_green_marker_matches() {  # <marker> <device> <provider> <host> <path> <number> <head> <checks>
   local marker=$1 device=$2 expected_provider=$3 expected_host=$4 expected_path=$5 expected_number=$6
-  local expected_head=$7 version provider host path number head
+  local expected_head=$7 expected_checks=$8 version provider host path number head checks
   fm_pr_private_file_valid "$marker" 600 "$device" || return 1
   exec 8< "$marker" || return 1
   IFS= read -r version <&8 || { exec 8<&-; return 1; }
@@ -1418,46 +1418,49 @@ fm_pr_poll_green_marker_matches() {  # <marker> <device> <provider> <host> <path
   IFS= read -r path <&8 || { exec 8<&-; return 1; }
   IFS= read -r number <&8 || { exec 8<&-; return 1; }
   IFS= read -r head <&8 || { exec 8<&-; return 1; }
+  IFS= read -r checks <&8 || { exec 8<&-; return 1; }
   if IFS= read -r _extra <&8; then
     exec 8<&-
     return 1
   fi
   exec 8<&-
-  [ "$version" = fm-pr-poll-green-notified-v1 ] \
+  [ "$version" = fm-pr-poll-green-notified-v2 ] \
     && [ "$provider" = "$expected_provider" ] \
     && [ "$host" = "$expected_host" ] \
     && [ "$path" = "$expected_path" ] \
     && [ "$number" = "$expected_number" ] \
-    && [ "$head" = "$expected_head" ]
+    && [ "$head" = "$expected_head" ] \
+    && [ "$checks" = "$expected_checks" ]
 }
 
-fm_pr_poll_green_already_notified() {  # <state> <id> <provider> <host> <path> <number> <head>
+fm_pr_poll_green_already_notified() {  # <state> <id> <provider> <host> <path> <number> <head> <checks>
   local state=$1 id=$2 state_device
   fm_pr_task_id_valid "$id" || return 1
   [ -d "$state" ] && [ ! -L "$state" ] || return 1
   state_device=$(fm_pr_file_device "$state") || return 1
   fm_pr_poll_green_marker_matches "$state/$id.pr-poll-green-notified" "$state_device" \
-    "$3" "$4" "$5" "$6" "$7"
+    "$3" "$4" "$5" "$6" "$7" "$8"
 }
 
-fm_pr_poll_green_mark_notified() {  # <state> <id> <provider> <host> <path> <number> <head>
-  local state=$1 id=$2 provider=$3 host=$4 path=$5 number=$6 head=$7 marker tmp state_device
+fm_pr_poll_green_mark_notified() {  # <state> <id> <provider> <host> <path> <number> <head> <checks>
+  local state=$1 id=$2 provider=$3 host=$4 path=$5 number=$6 head=$7 checks=$8 marker tmp state_device
   fm_pr_task_id_valid "$id" || return 1
   fm_pr_head_valid "$head" || return 1
+  [[ "$checks" =~ ^[0-9a-f]{64}$ ]] || return 1
   [ -d "$state" ] && [ ! -L "$state" ] || return 1
   state_device=$(fm_pr_file_device "$state") || return 1
   marker="$state/$id.pr-poll-green-notified"
   fm_pr_regular_destination_on_device_or_absent "$marker" "$state_device" || return 1
   tmp=$(umask 077 && mktemp "$state/.fm-pr-poll-green-notified.XXXXXX") || return 1
-  if ! printf '%s\n%s\n%s\n%s\n%s\n%s\n' \
-      fm-pr-poll-green-notified-v1 "$provider" "$host" "$path" "$number" "$head" > "$tmp" \
+  if ! printf '%s\n' \
+      fm-pr-poll-green-notified-v2 "$provider" "$host" "$path" "$number" "$head" "$checks" > "$tmp" \
     || ! chmod 0600 "$tmp" \
     || ! fm_pr_poll_green_marker_matches "$tmp" "$state_device" \
-      "$provider" "$host" "$path" "$number" "$head" \
+      "$provider" "$host" "$path" "$number" "$head" "$checks" \
     || ! fm_pr_regular_destination_on_device_or_absent "$marker" "$state_device" \
     || ! mv -f -- "$tmp" "$marker" \
     || ! fm_pr_poll_green_marker_matches "$marker" "$state_device" \
-      "$provider" "$host" "$path" "$number" "$head"; then
+      "$provider" "$host" "$path" "$number" "$head" "$checks"; then
     rm -f -- "$tmp"
     return 1
   fi
